@@ -1,6 +1,6 @@
 import json
 from bs4 import BeautifulSoup
-
+from re import sub
 
 departamentos = {
     'AMAZONAS': '2',
@@ -67,6 +67,10 @@ def process_table(html,nombre):
         {"nombre":nombre.replace("/ ","")}
     )
 
+    company.update(
+        {"screenshotURL":r".\results\screenshots\{}.png".format(to_camel(nombre.replace("/ ","")))}
+    )
+
     for element in table_data:
         if(len(element)>1):
             result["Key"].append(element[0].replace(":",""))
@@ -74,10 +78,15 @@ def process_table(html,nombre):
             temp={element[0].replace(":",""):element[1]}
             company.update(temp)
 
-    with open(r'C:\Users\jeiso\Documents\GitHub\pruebatecnica\results\company.json', 'w', encoding='utf-8') as outfile:
-        json.dump(company, outfile, ensure_ascii=False)
-    return 0
+    path = r".\results\json\{}.json".format(to_camel(nombre.replace("/ ","")))
 
+    with open(path, 'w', encoding='utf-8') as outfile:
+        json.dump(company, outfile, ensure_ascii=False)
+
+
+def to_camel(s):
+    s = sub(r"(_|-)+", " ", s).title().replace(" ", "")
+    return s[:].lower()
 
 
 #yfile = open(r"C:\Users\jeiso\Documents\GitHub\pruebatecnica\results\table.txt", encoding='utf-8')

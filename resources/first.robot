@@ -30,21 +30,31 @@ This is my test case
     ${departamentoId}=    Get Departamento Id    ${departamento}
     Click Element  xpath=//*[@id="PROVINCIA"]/option[${departamentoId}]
 
-    ${resultsText}  Get Text  xpath://*[@id="a_nacional"]
-    ${numberResults}=  Get Number Results  ${resultsText}
-    #Log To Console    Hola====${numberResults}
 
-    #if Get Number Results > 0
-    #Ciclo para recorrer cada empresa
-    Wait Until Page Contains    Denominación
-    Click Element    xpath=//*[@id="nacional"]/tbody/tr[1]
+    FOR  ${Index}  IN RANGE  1  ${n}+1  1
+
+        ${resultsText}  Get Text  xpath://*[@id="a_nacional"]
+        ${numberResults}=  Get Number Results  ${resultsText}
+        #Log To Console    Hola====${numberResults}
+
+        #if Get Number Results > 0
+        #Ciclo para recorrer cada empresa
+        Wait Until Page Contains    Denominación
+        Click Element    xpath=//*[@id="nacional"]/tbody/tr[${Index}]
+
+        ${nombre}    Get Text    xpath=//*[@id="titInner"]/div[1]/ul/li[5]
+        ${html_table}=    Get Element Attribute    //*[@id="imprimir"]/table    outerHTML
+        Process Table    ${html_table}    ${nombre}
+        ${ssfilename}    To Camel    ${nombre}
+        Capture Page Screenshot    ./screenshots/${ssfilename}.png
+
+        Go Back
+    END
 
 
-    ${nombre}    Get Text    xpath=//*[@id="titInner"]/div[1]/ul/li[5]
-    ${html_table}=    Get Element Attribute    //*[@id="imprimir"]/table    outerHTML
-    Process Table    ${html_table}    ${nombre}
 
-    Capture Page Screenshot    ${n}.png
 
-    Sleep    5s
+    #Capture Page Screenshot    ${n}.png
+
+    #Sleep    5s
     Close Browser
