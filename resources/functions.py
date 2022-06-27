@@ -1,6 +1,11 @@
 import json
 from bs4 import BeautifulSoup
 from re import sub
+import math
+
+
+pageSize = 12
+maxResults = 30
 
 departamentos = {
     'AMAZONAS': '2',
@@ -88,6 +93,22 @@ def to_camel(s):
     s = sub(r"(_|-)+", " ", s).title().replace(" ", "")
     return s[:].lower()
 
+
+def get_page(n):
+    value = n/pageSize
+    maxPages = math.ceil(maxResults/pageSize)
+
+
+    for i in range (1,maxPages+1):
+        if(i-1<=value<=i):
+            return i
+
+def get_index_company(n):
+    return n - (pageSize*(get_page(n)-1))
+
+num = 36
+print(get_page(num))
+print(get_index_company(num))
 
 #yfile = open(r"C:\Users\jeiso\Documents\GitHub\pruebatecnica\results\table.txt", encoding='utf-8')
 #process_table(myfile,'Empresa123')

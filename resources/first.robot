@@ -51,10 +51,4 @@ This is my test case
         Go Back
     END
 
-
-
-
-    #Capture Page Screenshot    ${n}.png
-
-    #Sleep    5s
     Close Browser
