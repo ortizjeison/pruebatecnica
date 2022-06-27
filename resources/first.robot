@@ -7,7 +7,7 @@ Library  functions.py
 
 *** Variables ***
 
-${BROWSER}  Chrome
+${BROWSER}  Edge
 ${URL}  https://www.einforma.co/buscador-empresas-empresarios
 ${companyNameSearch}
 ${companyNITSearch}

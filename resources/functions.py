@@ -102,13 +102,13 @@ def get_page(n):
 
     for i in range (1,maxPages+1):
         if(i-1<=value<=i):
-            return i-1
+            return i+1
 
 def get_index_company(n):
-    return n - (pageSize*(get_page(n)-1))
+    return n - (pageSize*(get_page(n)-2))
 
-#num = 20
-#print("For num "+str(num)+": page:"+str(get_page(num))+" / index:"+str(get_index_company(num)))
+num = 20
+print("For num "+str(num)+": page:"+str(get_page(num))+" / index:"+str(get_index_company(num)))
 
 #yfile = open(r"C:\Users\jeiso\Documents\GitHub\pruebatecnica\results\table.txt", encoding='utf-8')
 #process_table(myfile,'Empresa123')
