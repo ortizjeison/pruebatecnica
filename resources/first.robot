@@ -44,7 +44,7 @@ This is my test case
     ${html_table}=    Get Element Attribute    //*[@id="imprimir"]/table    outerHTML
     Process Table    ${html_table}    ${nombre}
 
-    Capture Page Screenshot    ${nombre}.png
+    Capture Page Screenshot    ${n}.png
 
     Sleep    5s
     Close Browser

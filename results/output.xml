@@ -1,132 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220626 23:19:56.904" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220626 23:26:48.407" rpa="false" schemaversion="3">
 <suite id="s1" name="First" source="C:\Users\jeiso\Documents\GitHub\pruebatecnica\resources\first.robot">
 <test id="s1-t1" name="This is my test case" line="19">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${URL}</arg>
 <arg>${Browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220626 23:19:57.170" level="INFO">Opening browser 'Chrome' to base url 'https://www.einforma.co/buscador-empresas-empresarios'.</msg>
-<status status="PASS" starttime="20220626 23:19:57.170" endtime="20220626 23:20:00.469"/>
+<msg timestamp="20220626 23:26:48.668" level="INFO">Opening browser 'Chrome' to base url 'https://www.einforma.co/buscador-empresas-empresarios'.</msg>
+<status status="PASS" starttime="20220626 23:26:48.668" endtime="20220626 23:26:52.297"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220626 23:20:00.470" endtime="20220626 23:20:00.597"/>
+<status status="PASS" starttime="20220626 23:26:52.298" endtime="20220626 23:26:52.418"/>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <arg>Buscar y verificar empresas por nombre</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20220626 23:20:00.600" endtime="20220626 23:20:00.611"/>
+<status status="PASS" starttime="20220626 23:26:52.418" endtime="20220626 23:26:52.428"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>search</arg>
 <arg>${companyNameSearch}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220626 23:20:00.612" level="INFO">Typing text 'olimpica' into text field 'search'.</msg>
-<status status="PASS" starttime="20220626 23:20:00.612" endtime="20220626 23:20:00.679"/>
+<msg timestamp="20220626 23:26:52.428" level="INFO">Typing text 'olimpica' into text field 'search'.</msg>
+<status status="PASS" starttime="20220626 23:26:52.428" endtime="20220626 23:26:52.497"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>xpath=//*[@id="buscador_cabecera"]/input[2]</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20220626 23:20:00.679" level="INFO">Clicking button 'xpath=//*[@id="buscador_cabecera"]/input[2]'.</msg>
-<status status="PASS" starttime="20220626 23:20:00.679" endtime="20220626 23:20:01.501"/>
+<msg timestamp="20220626 23:26:52.497" level="INFO">Clicking button 'xpath=//*[@id="buscador_cabecera"]/input[2]'.</msg>
+<status status="PASS" starttime="20220626 23:26:52.497" endtime="20220626 23:26:53.311"/>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <arg>Resultados de búsqueda</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20220626 23:20:01.501" endtime="20220626 23:20:01.513"/>
+<status status="PASS" starttime="20220626 23:26:53.311" endtime="20220626 23:26:53.325"/>
 </kw>
 <kw name="Get Departamento Id" library="functions">
 <var>${departamentoId}</var>
 <arg>${departamento}</arg>
-<msg timestamp="20220626 23:20:01.514" level="INFO">${departamentoId} = 6</msg>
-<status status="PASS" starttime="20220626 23:20:01.514" endtime="20220626 23:20:01.514"/>
+<msg timestamp="20220626 23:26:53.326" level="INFO">${departamentoId} = 6</msg>
+<status status="PASS" starttime="20220626 23:26:53.326" endtime="20220626 23:26:53.326"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath=//*[@id="PROVINCIA"]/option[${departamentoId}]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220626 23:20:01.515" level="INFO">Clicking element 'xpath=//*[@id="PROVINCIA"]/option[6]'.</msg>
-<status status="PASS" starttime="20220626 23:20:01.514" endtime="20220626 23:20:02.022"/>
+<msg timestamp="20220626 23:26:53.326" level="INFO">Clicking element 'xpath=//*[@id="PROVINCIA"]/option[6]'.</msg>
+<status status="PASS" starttime="20220626 23:26:53.326" endtime="20220626 23:26:53.922"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${resultsText}</var>
 <arg>xpath://*[@id="a_nacional"]</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220626 23:20:02.049" level="INFO">${resultsText} = Empresas y Empresarios (28)</msg>
-<status status="PASS" starttime="20220626 23:20:02.022" endtime="20220626 23:20:02.049"/>
+<msg timestamp="20220626 23:26:53.944" level="INFO">${resultsText} = Empresas y Empresarios (28)</msg>
+<status status="PASS" starttime="20220626 23:26:53.923" endtime="20220626 23:26:53.944"/>
 </kw>
 <kw name="Get Number Results" library="functions">
 <var>${numberResults}</var>
 <arg>${resultsText}</arg>
-<msg timestamp="20220626 23:20:02.050" level="INFO">${numberResults} = 28</msg>
-<status status="PASS" starttime="20220626 23:20:02.050" endtime="20220626 23:20:02.050"/>
+<msg timestamp="20220626 23:26:53.945" level="INFO">${numberResults} = 28</msg>
+<status status="PASS" starttime="20220626 23:26:53.945" endtime="20220626 23:26:53.945"/>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <arg>Denominación</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20220626 23:20:02.050" endtime="20220626 23:20:02.061"/>
+<status status="PASS" starttime="20220626 23:26:53.946" endtime="20220626 23:26:53.959"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath=//*[@id="nacional"]/tbody/tr[1]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220626 23:20:02.062" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/tbody/tr[1]'.</msg>
-<status status="PASS" starttime="20220626 23:20:02.061" endtime="20220626 23:20:02.714"/>
+<msg timestamp="20220626 23:26:53.960" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/tbody/tr[1]'.</msg>
+<status status="PASS" starttime="20220626 23:26:53.959" endtime="20220626 23:26:54.577"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${nombre}</var>
 <arg>xpath=//*[@id="titInner"]/div[1]/ul/li[5]</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220626 23:20:02.747" level="INFO">${nombre} = / MAQUINAS Y JUEGOS DE COLOMBIA SOCIEDAD POR ACCIONES SIMPLIFICADA</msg>
-<status status="PASS" starttime="20220626 23:20:02.714" endtime="20220626 23:20:02.747"/>
+<msg timestamp="20220626 23:26:54.606" level="INFO">${nombre} = / MAQUINAS Y JUEGOS DE COLOMBIA SOCIEDAD POR ACCIONES SIMPLIFICADA</msg>
+<status status="PASS" starttime="20220626 23:26:54.578" endtime="20220626 23:26:54.606"/>
 </kw>
 <kw name="Get Element Attribute" library="SeleniumLibrary">
 <var>${html_table}</var>
 <arg>//*[@id="imprimir"]/table</arg>
 <arg>outerHTML</arg>
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<msg timestamp="20220626 23:20:02.768" level="INFO">${html_table} = &lt;table align="center" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="tit_ficha" colspan="2"&gt;&lt;div class="seccion"&gt;Información Básica&lt;span&gt;&lt;img src="/templates/web/_img/_gfx/carpeta.gif"&gt;&lt;/span&gt;&lt;...</msg>
-<status status="PASS" starttime="20220626 23:20:02.747" endtime="20220626 23:20:02.768"/>
+<msg timestamp="20220626 23:26:54.631" level="INFO">${html_table} = &lt;table align="center" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="tit_ficha" colspan="2"&gt;&lt;div class="seccion"&gt;Información Básica&lt;span&gt;&lt;img src="/templates/web/_img/_gfx/carpeta.gif"&gt;&lt;/span&gt;&lt;...</msg>
+<status status="PASS" starttime="20220626 23:26:54.607" endtime="20220626 23:26:54.631"/>
 </kw>
 <kw name="Process Table" library="functions">
 <arg>${html_table}</arg>
 <arg>${nombre}</arg>
-<msg timestamp="20220626 23:20:02.773" level="INFO">C:\Users\jeiso\Documents\GitHub\pruebatecnica\resources\functions.py:59: GuessedAtParserWarning: No parser was explicitly specified, so I'm using the best available HTML parser for this system ("html.parser"). This usually isn't a problem, but if you run this code on another system, or in a different virtual environment, it may use a different parser and behave differently.
+<msg timestamp="20220626 23:26:54.636" level="INFO">C:\Users\jeiso\Documents\GitHub\pruebatecnica\resources\functions.py:59: GuessedAtParserWarning: No parser was explicitly specified, so I'm using the best available HTML parser for this system ("html.parser"). This usually isn't a problem, but if you run this code on another system, or in a different virtual environment, it may use a different parser and behave differently.
 
 The code that caused this warning is on line 59 of the file C:\Users\jeiso\Documents\GitHub\pruebatecnica\resources\functions.py. To get rid of this warning, pass the additional argument 'features="html.parser"' to the BeautifulSoup constructor.
 
   for row in BeautifulSoup(html)("tr")]</msg>
-<status status="PASS" starttime="20220626 23:20:02.769" endtime="20220626 23:20:02.773"/>
+<status status="PASS" starttime="20220626 23:26:54.631" endtime="20220626 23:26:54.637"/>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<arg>${nombre}.png</arg>
+<arg>${n}.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20220626 23:20:03.157" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20220626 23:20:03.158" level="FAIL">Failed to save screenshot 'C:\ MAQUINAS Y JUEGOS DE COLOMBIA SOCIEDAD POR ACCIONES SIMPLIFICADA.png'.</msg>
-<status status="FAIL" starttime="20220626 23:20:02.774" endtime="20220626 23:20:03.167"/>
+<msg timestamp="20220626 23:26:54.837" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="2.png"&gt;&lt;img src="2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220626 23:26:54.637" endtime="20220626 23:26:54.837"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20220626 23:20:03.168" endtime="20220626 23:20:03.168"/>
+<msg timestamp="20220626 23:26:59.845" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220626 23:26:54.838" endtime="20220626 23:26:59.845"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="NOT RUN" starttime="20220626 23:20:03.169" endtime="20220626 23:20:03.169"/>
+<status status="PASS" starttime="20220626 23:26:59.846" endtime="20220626 23:27:01.948"/>
 </kw>
 <doc>hello world</doc>
-<status status="FAIL" starttime="20220626 23:19:57.169" endtime="20220626 23:20:03.169">Failed to save screenshot 'C:\ MAQUINAS Y JUEGOS DE COLOMBIA SOCIEDAD POR ACCIONES SIMPLIFICADA.png'.</status>
+<status status="PASS" starttime="20220626 23:26:48.667" endtime="20220626 23:27:01.949"/>
 </test>
 <doc>holamundo</doc>
-<status status="FAIL" starttime="20220626 23:19:56.906" endtime="20220626 23:20:03.171"/>
+<status status="PASS" starttime="20220626 23:26:48.409" endtime="20220626 23:27:01.950"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="First">First</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="First">First</stat>
 </suite>
 </statistics>
 <errors>
