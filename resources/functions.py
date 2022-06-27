@@ -62,7 +62,7 @@ def get_departamento_id(nombre):
 
 def process_table(html,nombre):
 
-    path = r'..\results\json\test.json'
+    path = r'.\results\json\test.json'
 
     database = db.getDb(path)
 

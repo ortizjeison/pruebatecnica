@@ -10,9 +10,7 @@ Library  functions.py
 ${BROWSER}  Chrome
 ${URL}  https://www.einforma.co/buscador-empresas-empresarios
 ${companyNameSearch}
-${companyNITSearch}
 ${departamento}
-${numberOfResults}
 ${n}
 
 *** Test Cases ***
@@ -26,40 +24,40 @@ This is my test case
     Click Button  xpath=//*[@id="buscador_cabecera"]/input[2]
     Wait Until Page Contains  Resultados de búsqueda
 
-    #Seleccionar departamento
-    ${departamentoId}=    Get Departamento Id    ${departamento}
+    ${resultsText}    Get Text    xpath=//*[@id="a_nacional"]
 
-    Log To Console    ${departamentoId}
+    ${numberResults}=    Get Number Results  ${resultsText}
+    IF    ${numberResults} == 0
+        Close Browser
 
-    Click Element  xpath=//*[@id="PROVINCIA"]/option[${departamentoId}]
+    ELSE
+        #Seleccionar departamento
+        ${departamentoId}=    Get Departamento Id    ${departamento}
+        Click Element  xpath=//*[@id="PROVINCIA"]/option[${departamentoId}]
 
+        FOR  ${counter}  IN RANGE  1  ${n}+1  1
 
-    FOR  ${counter}  IN RANGE  1  ${n}+1  1
+            ${resultsText}  Get Text  xpath://*[@id="a_nacional"]
+            Wait Until Page Contains    Denominación
 
-        ${resultsText}  Get Text  xpath://*[@id="a_nacional"]
+            ${page}=    Get Page    ${counter}
+            ${indexCompany}=    Get Index Company    ${counter}
 
-        #Para ver si son 0
-        ${numberResults}=  Get Number Results  ${resultsText}
+            #Click Page
+            Click Element    xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[${page}]
+            Sleep    5s
+            Click Element    xpath=//*[@id="nacional"]/tbody/tr[${indexCompany}]
 
-        Wait Until Page Contains    Denominación
+            ${nombre}    Get Text    xpath=//*[@id="titInner"]/div[1]/ul/li[5]
+            ${html_table}=    Get Element Attribute    //*[@id="imprimir"]/table    outerHTML
+            Process Table    ${html_table}    ${nombre}
+            ${ssfilename}    To Camel    ${nombre}
+            Capture Page Screenshot    ./screenshots/${ssfilename}.png
 
-        ${page}=    Get Page    ${counter}
-        ${indexCompany}=    Get Index Company    ${counter}
+            Go Back
+        END
 
-        #Click Page
-        Click Element    xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[${page}]
-        Sleep    5s
-        Click Element    xpath=//*[@id="nacional"]/tbody/tr[${indexCompany}]
+        Close Browser
 
-        ${nombre}    Get Text    xpath=//*[@id="titInner"]/div[1]/ul/li[5]
-        ${html_table}=    Get Element Attribute    //*[@id="imprimir"]/table    outerHTML
-        Process Table    ${html_table}    ${nombre}
-        ${ssfilename}    To Camel    ${nombre}
-        Capture Page Screenshot    ./screenshots/${ssfilename}.png
-
-        Go Back
     END
 
-    #
-
-    Close Browser
