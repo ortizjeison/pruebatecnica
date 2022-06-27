@@ -2,6 +2,7 @@ import json
 from bs4 import BeautifulSoup
 from re import sub
 import math
+from pysondb import db
 
 
 pageSize = 12
@@ -61,20 +62,42 @@ def get_departamento_id(nombre):
 
 def process_table(html,nombre):
 
+    path = r'..\results\json\test.json'
+
+    database = db.getDb(path)
+
     table_data = [[cell.text for cell in row("td")]
                   for row in BeautifulSoup(html)("tr")]
 
     result = {"Key":[], "Value":[]}
 
-    dict = '{}'
+    dict = '''{
+        "nombre": "Null",
+        "screenshotURL": "Null",
+        "ICI": "Null",
+        "Nit": "Null",
+        "Razón Social": "Null",
+        "Forma Jurídica": "Null",
+        "Departamento": "Null",
+        "Dirección Actual": "Null",
+        "Teléfono": "Null",
+        "Email": "Null",
+        "Actividad CIIU": "Null",
+        "Fecha Constitución": "Null",
+        "Matrícula Mercantil": "Null",
+        "Último Balance disponible en eInforma": "Null",
+        "Fecha Último Dato": "Null",
+        "Fecha Actualización Cámara Comercio": "Null"
+}'''
+
     company = json.loads(dict)
 
     company.update(
-        {"nombre":nombre.replace("/ ","")}
+        {"nombre": nombre.replace("/ ","")}
     )
 
     company.update(
-        {"screenshotURL":r".\results\screenshots\{}.png".format(to_camel(nombre.replace("/ ","")))}
+        {"screenshotURL":r'results\screenshots\{}.png'.format(to_camel(nombre.replace("/ ","")))}
     )
 
     for element in table_data:
@@ -84,10 +107,9 @@ def process_table(html,nombre):
             temp={element[0].replace(":",""):element[1]}
             company.update(temp)
 
-    path = r".\results\json\{}.json".format(to_camel(nombre.replace("/ ","")))
 
-    with open(path, 'w', encoding='utf-8') as outfile:
-        json.dump(company, outfile, ensure_ascii=False)
+    id = database.add(company)
+
 
 
 def to_camel(s):
@@ -107,8 +129,8 @@ def get_page(n):
 def get_index_company(n):
     return n - (pageSize*(get_page(n)-2))
 
-num = 20
-print("For num "+str(num)+": page:"+str(get_page(num))+" / index:"+str(get_index_company(num)))
+#num = 20
+#print("For num "+str(num)+": page:"+str(get_page(num))+" / index:"+str(get_index_company(num)))
 
-#yfile = open(r"C:\Users\jeiso\Documents\GitHub\pruebatecnica\results\table.txt", encoding='utf-8')
-#process_table(myfile,'Empresa123')
+#myfile = open(r"C:\Users\jeiso\Documents\GitHub\pruebatecnica\results\table.txt", encoding='utf-8')
+#process_table(myfile,'Empresa5213')

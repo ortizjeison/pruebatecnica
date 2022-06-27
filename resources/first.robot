@@ -7,7 +7,7 @@ Library  functions.py
 
 *** Variables ***
 
-${BROWSER}  Edge
+${BROWSER}  Chrome
 ${URL}  https://www.einforma.co/buscador-empresas-empresarios
 ${companyNameSearch}
 ${companyNITSearch}
@@ -48,7 +48,7 @@ This is my test case
 
         #Click Page
         Click Element    xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[${page}]
-        Sleep    2s
+        Sleep    5s
         Click Element    xpath=//*[@id="nacional"]/tbody/tr[${indexCompany}]
 
         ${nombre}    Get Text    xpath=//*[@id="titInner"]/div[1]/ul/li[5]
@@ -59,5 +59,7 @@ This is my test case
 
         Go Back
     END
+
+    #
 
     Close Browser

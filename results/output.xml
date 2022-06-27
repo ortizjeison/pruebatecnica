@@ -1,57 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220627 12:12:07.958" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220627 14:02:55.509" rpa="false" schemaversion="3">
 <suite id="s1" name="First" source="C:\Users\jeiso\Documents\GitHub\pruebatecnica\resources\first.robot">
 <test id="s1-t1" name="This is my test case" line="19">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${URL}</arg>
 <arg>${Browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220627 12:12:08.219" level="INFO">Opening browser 'Edge' to base url 'https://www.einforma.co/buscador-empresas-empresarios'.</msg>
-<status status="PASS" starttime="20220627 12:12:08.219" endtime="20220627 12:12:13.616"/>
+<msg timestamp="20220627 14:02:55.776" level="INFO">Opening browser 'Chrome' to base url 'https://www.einforma.co/buscador-empresas-empresarios'.</msg>
+<status status="PASS" starttime="20220627 14:02:55.776" endtime="20220627 14:02:59.053"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220627 12:12:13.616" endtime="20220627 12:12:13.739"/>
+<status status="PASS" starttime="20220627 14:02:59.054" endtime="20220627 14:02:59.176"/>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <arg>Buscar y verificar empresas por nombre</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20220627 12:12:13.739" endtime="20220627 12:12:13.749"/>
+<status status="PASS" starttime="20220627 14:02:59.176" endtime="20220627 14:02:59.186"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>search</arg>
 <arg>${companyNameSearch}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:13.750" level="INFO">Typing text 'ol' into text field 'search'.</msg>
-<status status="PASS" starttime="20220627 12:12:13.750" endtime="20220627 12:12:13.814"/>
+<msg timestamp="20220627 14:02:59.187" level="INFO">Typing text 'ol' into text field 'search'.</msg>
+<status status="PASS" starttime="20220627 14:02:59.187" endtime="20220627 14:02:59.257"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>xpath=//*[@id="buscador_cabecera"]/input[2]</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:13.815" level="INFO">Clicking button 'xpath=//*[@id="buscador_cabecera"]/input[2]'.</msg>
-<status status="PASS" starttime="20220627 12:12:13.815" endtime="20220627 12:12:14.630"/>
+<msg timestamp="20220627 14:02:59.258" level="INFO">Clicking button 'xpath=//*[@id="buscador_cabecera"]/input[2]'.</msg>
+<status status="PASS" starttime="20220627 14:02:59.258" endtime="20220627 14:02:59.832"/>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <arg>Resultados de búsqueda</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20220627 12:12:14.631" endtime="20220627 12:12:14.641"/>
+<msg timestamp="20220627 14:03:02.009" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=103.0.5060.53)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00526463+2188387]
+	Ordinal0 [0x004BE461+1762401]
+	Ordinal0 [0x003D3D78+802168]
+	Ordinal0 [0x003BC680+706176]
+	Ordinal0 [0x0041F169+1110377]
+	Ordinal0 [0x0042C3C2+1164226]
+	Ordinal0 [0x0041C5F6+1099254]
+	Ordinal0 [0x003F6BE0+945120]
+	Ordinal0 [0x003F7AD6+948950]
+	GetHandleVerifier [0x007C71F2+2712546]
+	GetHandleVerifier [0x007B886D+2652765]
+	GetHandleVerifier [0x005B002A+520730]
+	GetHandleVerifier [0x005AEE06+516086]
+	Ordinal0 [0x004C468B+1787531]
+	Ordinal0 [0x004C8E88+1805960]
+	Ordinal0 [0x004C8F75+1806197]
+	Ordinal0 [0x004D1DF1+1842673]
+	BaseThreadInitThunk [0x76C86739+25]
+	RtlGetFullPathName_UEx [0x77738FEF+1215]
+	RtlGetFullPathName_UEx [0x77738FBD+1165]
+</msg>
+<msg timestamp="20220627 14:03:02.012" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=103.0.5060.53)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00526463+2188387]
+	Ordinal0 [0x004BE461+1762401]
+	Ordinal0 [0x003D3D78+802168]
+	Ordinal0 [0x003BC680+706176]
+	Ordinal0 [0x0041F169+1110377]
+	Ordinal0 [0x0042C3C2+1164226]
+	Ordinal0 [0x0041C5F6+1099254]
+	Ordinal0 [0x003F6BE0+945120]
+	Ordinal0 [0x003F7AD6+948950]
+	GetHandleVerifier [0x007C71F2+2712546]
+	GetHandleVerifier [0x007B886D+2652765]
+	GetHandleVerifier [0x005B002A+520730]
+	GetHandleVerifier [0x005AEE06+516086]
+	Ordinal0 [0x004C468B+1787531]
+	Ordinal0 [0x004C8E88+1805960]
+	Ordinal0 [0x004C8F75+1806197]
+	Ordinal0 [0x004D1DF1+1842673]
+	BaseThreadInitThunk [0x76C86739+25]
+	RtlGetFullPathName_UEx [0x77738FEF+1215]
+	RtlGetFullPathName_UEx [0x77738FBD+1165]
+</msg>
+<status status="FAIL" starttime="20220627 14:02:59.833" endtime="20220627 14:03:02.014"/>
 </kw>
 <kw name="Get Departamento Id" library="functions">
 <var>${departamentoId}</var>
 <arg>${departamento}</arg>
-<msg timestamp="20220627 12:12:14.642" level="INFO">${departamentoId} = 1</msg>
-<status status="PASS" starttime="20220627 12:12:14.642" endtime="20220627 12:12:14.642"/>
+<status status="NOT RUN" starttime="20220627 14:03:02.014" endtime="20220627 14:03:02.014"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${departamentoId}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220627 12:12:14.643" endtime="20220627 12:12:14.643"/>
+<status status="NOT RUN" starttime="20220627 14:03:02.015" endtime="20220627 14:03:02.015"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath=//*[@id="PROVINCIA"]/option[${departamentoId}]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:14.644" level="INFO">Clicking element 'xpath=//*[@id="PROVINCIA"]/option[1]'.</msg>
-<status status="PASS" starttime="20220627 12:12:14.643" endtime="20220627 12:12:14.672"/>
+<status status="NOT RUN" starttime="20220627 14:03:02.015" endtime="20220627 14:03:02.015"/>
 </kw>
 <for flavor="IN RANGE">
 <var>${counter}</var>
@@ -59,1779 +109,118 @@
 <value>${n}+1</value>
 <value>1</value>
 <iter>
-<var name="${counter}">1</var>
+<var name="${counter}"/>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${resultsText}</var>
 <arg>xpath://*[@id="a_nacional"]</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:14.693" level="INFO">${resultsText} = Empresas y Empresarios (59)</msg>
-<status status="PASS" starttime="20220627 12:12:14.673" endtime="20220627 12:12:14.693"/>
+<status status="NOT RUN" starttime="20220627 14:03:02.016" endtime="20220627 14:03:02.016"/>
 </kw>
 <kw name="Get Number Results" library="functions">
 <var>${numberResults}</var>
 <arg>${resultsText}</arg>
-<msg timestamp="20220627 12:12:14.694" level="INFO">${numberResults} = 59</msg>
-<status status="PASS" starttime="20220627 12:12:14.693" endtime="20220627 12:12:14.694"/>
+<status status="NOT RUN" starttime="20220627 14:03:02.016" endtime="20220627 14:03:02.016"/>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <arg>Denominación</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20220627 12:12:14.694" endtime="20220627 12:12:14.703"/>
+<status status="NOT RUN" starttime="20220627 14:03:02.016" endtime="20220627 14:03:02.016"/>
 </kw>
 <kw name="Get Page" library="functions">
 <var>${page}</var>
 <arg>${counter}</arg>
-<msg timestamp="20220627 12:12:14.704" level="INFO">${page} = 2</msg>
-<status status="PASS" starttime="20220627 12:12:14.703" endtime="20220627 12:12:14.704"/>
+<status status="NOT RUN" starttime="20220627 14:03:02.016" endtime="20220627 14:03:02.016"/>
 </kw>
 <kw name="Get Index Company" library="functions">
 <var>${indexCompany}</var>
 <arg>${counter}</arg>
-<msg timestamp="20220627 12:12:14.704" level="INFO">${indexCompany} = 1</msg>
-<status status="PASS" starttime="20220627 12:12:14.704" endtime="20220627 12:12:14.704"/>
+<status status="NOT RUN" starttime="20220627 14:03:02.016" endtime="20220627 14:03:02.016"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[${page}]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:14.704" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[2]'.</msg>
-<status status="PASS" starttime="20220627 12:12:14.704" endtime="20220627 12:12:14.754"/>
+<status status="NOT RUN" starttime="20220627 14:03:02.016" endtime="20220627 14:03:02.016"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
+<arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 12:12:16.760" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20220627 12:12:14.754" endtime="20220627 12:12:16.760"/>
+<status status="NOT RUN" starttime="20220627 14:03:02.016" endtime="20220627 14:03:02.016"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath=//*[@id="nacional"]/tbody/tr[${indexCompany}]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:16.761" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/tbody/tr[1]'.</msg>
-<status status="PASS" starttime="20220627 12:12:16.760" endtime="20220627 12:12:17.448"/>
+<status status="NOT RUN" starttime="20220627 14:03:02.016" endtime="20220627 14:03:02.016"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${nombre}</var>
 <arg>xpath=//*[@id="titInner"]/div[1]/ul/li[5]</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:17.470" level="INFO">${nombre} = / VEEDURIA CIUDADANA DERECHOS HUMANOS OPERACION LIBERTAD OL EN LIQUIDACION</msg>
-<status status="PASS" starttime="20220627 12:12:17.448" endtime="20220627 12:12:17.470"/>
+<status status="NOT RUN" starttime="20220627 14:03:02.016" endtime="20220627 14:03:02.016"/>
 </kw>
 <kw name="Get Element Attribute" library="SeleniumLibrary">
 <var>${html_table}</var>
 <arg>//*[@id="imprimir"]/table</arg>
 <arg>outerHTML</arg>
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<msg timestamp="20220627 12:12:17.539" level="INFO">${html_table} = &lt;table align="center" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="tit_ficha" colspan="2"&gt;&lt;div class="seccion"&gt;Información Básica&lt;span&gt;&lt;img src="/templates/web/_img/_gfx/carpeta.gif"&gt;&lt;/span&gt;&lt;...</msg>
-<status status="PASS" starttime="20220627 12:12:17.470" endtime="20220627 12:12:17.539"/>
+<status status="NOT RUN" starttime="20220627 14:03:02.017" endtime="20220627 14:03:02.017"/>
 </kw>
 <kw name="Process Table" library="functions">
 <arg>${html_table}</arg>
 <arg>${nombre}</arg>
-<msg timestamp="20220627 12:12:17.543" level="INFO">C:\Users\jeiso\Documents\GitHub\pruebatecnica\resources\functions.py:65: GuessedAtParserWarning: No parser was explicitly specified, so I'm using the best available HTML parser for this system ("html.parser"). This usually isn't a problem, but if you run this code on another system, or in a different virtual environment, it may use a different parser and behave differently.
-
-The code that caused this warning is on line 65 of the file C:\Users\jeiso\Documents\GitHub\pruebatecnica\resources\functions.py. To get rid of this warning, pass the additional argument 'features="html.parser"' to the BeautifulSoup constructor.
-
-  for row in BeautifulSoup(html)("tr")]</msg>
-<status status="PASS" starttime="20220627 12:12:17.540" endtime="20220627 12:12:17.545"/>
+<status status="NOT RUN" starttime="20220627 14:03:02.017" endtime="20220627 14:03:02.017"/>
 </kw>
 <kw name="To Camel" library="functions">
 <var>${ssfilename}</var>
 <arg>${nombre}</arg>
-<msg timestamp="20220627 12:12:17.546" level="INFO">${ssfilename} = /veeduriaciudadanaderechoshumanosoperacionlibertadolenliquidacion</msg>
-<status status="PASS" starttime="20220627 12:12:17.545" endtime="20220627 12:12:17.546"/>
+<status status="NOT RUN" starttime="20220627 14:03:02.017" endtime="20220627 14:03:02.017"/>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <arg>./screenshots/${ssfilename}.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20220627 12:12:17.685" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/veeduriaciudadanaderechoshumanosoperacionlibertadolenliquidacion.png"&gt;&lt;img src="screenshots/veeduriaciudadanaderechoshumanosoperacionlibertadolenliquidacion.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220627 12:12:17.546" endtime="20220627 12:12:17.685"/>
+<status status="NOT RUN" starttime="20220627 14:03:02.017" endtime="20220627 14:03:02.017"/>
 </kw>
 <kw name="Go Back" library="SeleniumLibrary">
 <doc>Simulates the user clicking the back button on their browser.</doc>
-<status status="PASS" starttime="20220627 12:12:17.685" endtime="20220627 12:12:18.003"/>
+<status status="NOT RUN" starttime="20220627 14:03:02.017" endtime="20220627 14:03:02.017"/>
 </kw>
-<status status="PASS" starttime="20220627 12:12:14.673" endtime="20220627 12:12:18.003"/>
+<status status="NOT RUN" starttime="20220627 14:03:02.016" endtime="20220627 14:03:02.017"/>
 </iter>
-<iter>
-<var name="${counter}">2</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${resultsText}</var>
-<arg>xpath://*[@id="a_nacional"]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:18.032" level="INFO">${resultsText} = Empresas y Empresarios (59)</msg>
-<status status="PASS" starttime="20220627 12:12:18.004" endtime="20220627 12:12:18.032"/>
-</kw>
-<kw name="Get Number Results" library="functions">
-<var>${numberResults}</var>
-<arg>${resultsText}</arg>
-<msg timestamp="20220627 12:12:18.032" level="INFO">${numberResults} = 59</msg>
-<status status="PASS" starttime="20220627 12:12:18.032" endtime="20220627 12:12:18.032"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Denominación</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20220627 12:12:18.032" endtime="20220627 12:12:18.039"/>
-</kw>
-<kw name="Get Page" library="functions">
-<var>${page}</var>
-<arg>${counter}</arg>
-<msg timestamp="20220627 12:12:18.039" level="INFO">${page} = 2</msg>
-<status status="PASS" starttime="20220627 12:12:18.039" endtime="20220627 12:12:18.039"/>
-</kw>
-<kw name="Get Index Company" library="functions">
-<var>${indexCompany}</var>
-<arg>${counter}</arg>
-<msg timestamp="20220627 12:12:18.040" level="INFO">${indexCompany} = 2</msg>
-<status status="PASS" starttime="20220627 12:12:18.039" endtime="20220627 12:12:18.040"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[${page}]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:18.040" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[2]'.</msg>
-<status status="PASS" starttime="20220627 12:12:18.040" endtime="20220627 12:12:18.086"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 12:12:20.091" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20220627 12:12:18.086" endtime="20220627 12:12:20.091"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="nacional"]/tbody/tr[${indexCompany}]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:20.092" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/tbody/tr[2]'.</msg>
-<status status="PASS" starttime="20220627 12:12:20.091" endtime="20220627 12:12:20.637"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${nombre}</var>
-<arg>xpath=//*[@id="titInner"]/div[1]/ul/li[5]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:20.673" level="INFO">${nombre} = / VEEDURIA CIUDADANA DERECHO INTERNACIONAL HUMANITARIO OL</msg>
-<status status="PASS" starttime="20220627 12:12:20.637" endtime="20220627 12:12:20.673"/>
-</kw>
-<kw name="Get Element Attribute" library="SeleniumLibrary">
-<var>${html_table}</var>
-<arg>//*[@id="imprimir"]/table</arg>
-<arg>outerHTML</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<msg timestamp="20220627 12:12:20.688" level="INFO">${html_table} = &lt;table align="center" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="tit_ficha" colspan="2"&gt;&lt;div class="seccion"&gt;Información Básica&lt;span&gt;&lt;img src="/templates/web/_img/_gfx/carpeta.gif"&gt;&lt;/span&gt;&lt;...</msg>
-<status status="PASS" starttime="20220627 12:12:20.673" endtime="20220627 12:12:20.688"/>
-</kw>
-<kw name="Process Table" library="functions">
-<arg>${html_table}</arg>
-<arg>${nombre}</arg>
-<status status="PASS" starttime="20220627 12:12:20.688" endtime="20220627 12:12:20.692"/>
-</kw>
-<kw name="To Camel" library="functions">
-<var>${ssfilename}</var>
-<arg>${nombre}</arg>
-<msg timestamp="20220627 12:12:20.693" level="INFO">${ssfilename} = /veeduriaciudadanaderechointernacionalhumanitariool</msg>
-<status status="PASS" starttime="20220627 12:12:20.692" endtime="20220627 12:12:20.693"/>
-</kw>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<arg>./screenshots/${ssfilename}.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20220627 12:12:20.822" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/veeduriaciudadanaderechointernacionalhumanitariool.png"&gt;&lt;img src="screenshots/veeduriaciudadanaderechointernacionalhumanitariool.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220627 12:12:20.693" endtime="20220627 12:12:20.822"/>
-</kw>
-<kw name="Go Back" library="SeleniumLibrary">
-<doc>Simulates the user clicking the back button on their browser.</doc>
-<status status="PASS" starttime="20220627 12:12:20.822" endtime="20220627 12:12:21.044"/>
-</kw>
-<status status="PASS" starttime="20220627 12:12:18.003" endtime="20220627 12:12:21.044"/>
-</iter>
-<iter>
-<var name="${counter}">3</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${resultsText}</var>
-<arg>xpath://*[@id="a_nacional"]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:21.061" level="INFO">${resultsText} = Empresas y Empresarios (59)</msg>
-<status status="PASS" starttime="20220627 12:12:21.045" endtime="20220627 12:12:21.061"/>
-</kw>
-<kw name="Get Number Results" library="functions">
-<var>${numberResults}</var>
-<arg>${resultsText}</arg>
-<msg timestamp="20220627 12:12:21.061" level="INFO">${numberResults} = 59</msg>
-<status status="PASS" starttime="20220627 12:12:21.061" endtime="20220627 12:12:21.061"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Denominación</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20220627 12:12:21.062" endtime="20220627 12:12:21.069"/>
-</kw>
-<kw name="Get Page" library="functions">
-<var>${page}</var>
-<arg>${counter}</arg>
-<msg timestamp="20220627 12:12:21.069" level="INFO">${page} = 2</msg>
-<status status="PASS" starttime="20220627 12:12:21.069" endtime="20220627 12:12:21.069"/>
-</kw>
-<kw name="Get Index Company" library="functions">
-<var>${indexCompany}</var>
-<arg>${counter}</arg>
-<msg timestamp="20220627 12:12:21.070" level="INFO">${indexCompany} = 3</msg>
-<status status="PASS" starttime="20220627 12:12:21.069" endtime="20220627 12:12:21.070"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[${page}]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:21.070" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[2]'.</msg>
-<status status="PASS" starttime="20220627 12:12:21.070" endtime="20220627 12:12:21.105"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 12:12:23.114" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20220627 12:12:21.105" endtime="20220627 12:12:23.114"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="nacional"]/tbody/tr[${indexCompany}]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:23.115" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/tbody/tr[3]'.</msg>
-<status status="PASS" starttime="20220627 12:12:23.115" endtime="20220627 12:12:23.642"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${nombre}</var>
-<arg>xpath=//*[@id="titInner"]/div[1]/ul/li[5]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:23.659" level="INFO">${nombre} = / NIVAL &amp; CIA OPERADOR PORTUARIO Y LOGISTICO SAS</msg>
-<status status="PASS" starttime="20220627 12:12:23.642" endtime="20220627 12:12:23.659"/>
-</kw>
-<kw name="Get Element Attribute" library="SeleniumLibrary">
-<var>${html_table}</var>
-<arg>//*[@id="imprimir"]/table</arg>
-<arg>outerHTML</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<msg timestamp="20220627 12:12:23.675" level="INFO">${html_table} = &lt;table align="center" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="tit_ficha" colspan="2"&gt;&lt;div class="seccion"&gt;Información Básica&lt;span&gt;&lt;img src="/templates/web/_img/_gfx/carpeta.gif"&gt;&lt;/span&gt;&lt;...</msg>
-<status status="PASS" starttime="20220627 12:12:23.659" endtime="20220627 12:12:23.675"/>
-</kw>
-<kw name="Process Table" library="functions">
-<arg>${html_table}</arg>
-<arg>${nombre}</arg>
-<status status="PASS" starttime="20220627 12:12:23.675" endtime="20220627 12:12:23.679"/>
-</kw>
-<kw name="To Camel" library="functions">
-<var>${ssfilename}</var>
-<arg>${nombre}</arg>
-<msg timestamp="20220627 12:12:23.679" level="INFO">${ssfilename} = /nival&amp;ciaoperadorportuarioylogisticosas</msg>
-<status status="PASS" starttime="20220627 12:12:23.679" endtime="20220627 12:12:23.679"/>
-</kw>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<arg>./screenshots/${ssfilename}.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20220627 12:12:23.839" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/nival%26ciaoperadorportuarioylogisticosas.png"&gt;&lt;img src="screenshots/nival%26ciaoperadorportuarioylogisticosas.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220627 12:12:23.679" endtime="20220627 12:12:23.839"/>
-</kw>
-<kw name="Go Back" library="SeleniumLibrary">
-<doc>Simulates the user clicking the back button on their browser.</doc>
-<status status="PASS" starttime="20220627 12:12:23.839" endtime="20220627 12:12:24.062"/>
-</kw>
-<status status="PASS" starttime="20220627 12:12:21.044" endtime="20220627 12:12:24.062"/>
-</iter>
-<iter>
-<var name="${counter}">4</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${resultsText}</var>
-<arg>xpath://*[@id="a_nacional"]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:24.085" level="INFO">${resultsText} = Empresas y Empresarios (59)</msg>
-<status status="PASS" starttime="20220627 12:12:24.062" endtime="20220627 12:12:24.085"/>
-</kw>
-<kw name="Get Number Results" library="functions">
-<var>${numberResults}</var>
-<arg>${resultsText}</arg>
-<msg timestamp="20220627 12:12:24.085" level="INFO">${numberResults} = 59</msg>
-<status status="PASS" starttime="20220627 12:12:24.085" endtime="20220627 12:12:24.085"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Denominación</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20220627 12:12:24.085" endtime="20220627 12:12:24.092"/>
-</kw>
-<kw name="Get Page" library="functions">
-<var>${page}</var>
-<arg>${counter}</arg>
-<msg timestamp="20220627 12:12:24.092" level="INFO">${page} = 2</msg>
-<status status="PASS" starttime="20220627 12:12:24.092" endtime="20220627 12:12:24.092"/>
-</kw>
-<kw name="Get Index Company" library="functions">
-<var>${indexCompany}</var>
-<arg>${counter}</arg>
-<msg timestamp="20220627 12:12:24.093" level="INFO">${indexCompany} = 4</msg>
-<status status="PASS" starttime="20220627 12:12:24.092" endtime="20220627 12:12:24.093"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[${page}]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:24.093" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[2]'.</msg>
-<status status="PASS" starttime="20220627 12:12:24.093" endtime="20220627 12:12:24.136"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 12:12:26.141" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20220627 12:12:24.136" endtime="20220627 12:12:26.141"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="nacional"]/tbody/tr[${indexCompany}]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:26.142" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/tbody/tr[4]'.</msg>
-<status status="PASS" starttime="20220627 12:12:26.141" endtime="20220627 12:12:26.688"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${nombre}</var>
-<arg>xpath=//*[@id="titInner"]/div[1]/ul/li[5]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:26.713" level="INFO">${nombre} = / OPERADORES Y LOGISTICAS SERMAR LTDA</msg>
-<status status="PASS" starttime="20220627 12:12:26.688" endtime="20220627 12:12:26.713"/>
-</kw>
-<kw name="Get Element Attribute" library="SeleniumLibrary">
-<var>${html_table}</var>
-<arg>//*[@id="imprimir"]/table</arg>
-<arg>outerHTML</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<msg timestamp="20220627 12:12:26.734" level="INFO">${html_table} = &lt;table align="center" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="tit_ficha" colspan="2"&gt;&lt;div class="seccion"&gt;Información Básica&lt;span&gt;&lt;img src="/templates/web/_img/_gfx/carpeta.gif"&gt;&lt;/span&gt;&lt;...</msg>
-<status status="PASS" starttime="20220627 12:12:26.713" endtime="20220627 12:12:26.734"/>
-</kw>
-<kw name="Process Table" library="functions">
-<arg>${html_table}</arg>
-<arg>${nombre}</arg>
-<status status="PASS" starttime="20220627 12:12:26.734" endtime="20220627 12:12:26.737"/>
-</kw>
-<kw name="To Camel" library="functions">
-<var>${ssfilename}</var>
-<arg>${nombre}</arg>
-<msg timestamp="20220627 12:12:26.738" level="INFO">${ssfilename} = /operadoresylogisticassermarltda</msg>
-<status status="PASS" starttime="20220627 12:12:26.737" endtime="20220627 12:12:26.738"/>
-</kw>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<arg>./screenshots/${ssfilename}.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20220627 12:12:26.910" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/operadoresylogisticassermarltda.png"&gt;&lt;img src="screenshots/operadoresylogisticassermarltda.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220627 12:12:26.738" endtime="20220627 12:12:26.910"/>
-</kw>
-<kw name="Go Back" library="SeleniumLibrary">
-<doc>Simulates the user clicking the back button on their browser.</doc>
-<status status="PASS" starttime="20220627 12:12:26.910" endtime="20220627 12:12:27.131"/>
-</kw>
-<status status="PASS" starttime="20220627 12:12:24.062" endtime="20220627 12:12:27.131"/>
-</iter>
-<iter>
-<var name="${counter}">5</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${resultsText}</var>
-<arg>xpath://*[@id="a_nacional"]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:27.152" level="INFO">${resultsText} = Empresas y Empresarios (59)</msg>
-<status status="PASS" starttime="20220627 12:12:27.132" endtime="20220627 12:12:27.153"/>
-</kw>
-<kw name="Get Number Results" library="functions">
-<var>${numberResults}</var>
-<arg>${resultsText}</arg>
-<msg timestamp="20220627 12:12:27.153" level="INFO">${numberResults} = 59</msg>
-<status status="PASS" starttime="20220627 12:12:27.153" endtime="20220627 12:12:27.153"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Denominación</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20220627 12:12:27.153" endtime="20220627 12:12:27.161"/>
-</kw>
-<kw name="Get Page" library="functions">
-<var>${page}</var>
-<arg>${counter}</arg>
-<msg timestamp="20220627 12:12:27.162" level="INFO">${page} = 2</msg>
-<status status="PASS" starttime="20220627 12:12:27.161" endtime="20220627 12:12:27.162"/>
-</kw>
-<kw name="Get Index Company" library="functions">
-<var>${indexCompany}</var>
-<arg>${counter}</arg>
-<msg timestamp="20220627 12:12:27.162" level="INFO">${indexCompany} = 5</msg>
-<status status="PASS" starttime="20220627 12:12:27.162" endtime="20220627 12:12:27.162"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[${page}]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:27.162" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[2]'.</msg>
-<status status="PASS" starttime="20220627 12:12:27.162" endtime="20220627 12:12:27.198"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 12:12:29.203" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20220627 12:12:27.198" endtime="20220627 12:12:29.203"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="nacional"]/tbody/tr[${indexCompany}]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:29.204" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/tbody/tr[5]'.</msg>
-<status status="PASS" starttime="20220627 12:12:29.203" endtime="20220627 12:12:29.717"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${nombre}</var>
-<arg>xpath=//*[@id="titInner"]/div[1]/ul/li[5]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:29.737" level="INFO">${nombre} = / LOPEZ PEREZ OSCAR OL</msg>
-<status status="PASS" starttime="20220627 12:12:29.717" endtime="20220627 12:12:29.737"/>
-</kw>
-<kw name="Get Element Attribute" library="SeleniumLibrary">
-<var>${html_table}</var>
-<arg>//*[@id="imprimir"]/table</arg>
-<arg>outerHTML</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<msg timestamp="20220627 12:12:29.753" level="INFO">${html_table} = &lt;table align="center" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="tit_ficha" colspan="2"&gt;&lt;div class="seccion"&gt;Información Básica&lt;span&gt;&lt;img src="/templates/web/_img/_gfx/carpeta.gif"&gt;&lt;/span&gt;&lt;...</msg>
-<status status="PASS" starttime="20220627 12:12:29.737" endtime="20220627 12:12:29.753"/>
-</kw>
-<kw name="Process Table" library="functions">
-<arg>${html_table}</arg>
-<arg>${nombre}</arg>
-<status status="PASS" starttime="20220627 12:12:29.753" endtime="20220627 12:12:29.756"/>
-</kw>
-<kw name="To Camel" library="functions">
-<var>${ssfilename}</var>
-<arg>${nombre}</arg>
-<msg timestamp="20220627 12:12:29.756" level="INFO">${ssfilename} = /lopezperezoscarol</msg>
-<status status="PASS" starttime="20220627 12:12:29.756" endtime="20220627 12:12:29.756"/>
-</kw>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<arg>./screenshots/${ssfilename}.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20220627 12:12:29.900" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/lopezperezoscarol.png"&gt;&lt;img src="screenshots/lopezperezoscarol.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220627 12:12:29.756" endtime="20220627 12:12:29.900"/>
-</kw>
-<kw name="Go Back" library="SeleniumLibrary">
-<doc>Simulates the user clicking the back button on their browser.</doc>
-<status status="PASS" starttime="20220627 12:12:29.901" endtime="20220627 12:12:30.134"/>
-</kw>
-<status status="PASS" starttime="20220627 12:12:27.132" endtime="20220627 12:12:30.134"/>
-</iter>
-<iter>
-<var name="${counter}">6</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${resultsText}</var>
-<arg>xpath://*[@id="a_nacional"]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:30.163" level="INFO">${resultsText} = Empresas y Empresarios (59)</msg>
-<status status="PASS" starttime="20220627 12:12:30.134" endtime="20220627 12:12:30.163"/>
-</kw>
-<kw name="Get Number Results" library="functions">
-<var>${numberResults}</var>
-<arg>${resultsText}</arg>
-<msg timestamp="20220627 12:12:30.163" level="INFO">${numberResults} = 59</msg>
-<status status="PASS" starttime="20220627 12:12:30.163" endtime="20220627 12:12:30.163"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Denominación</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20220627 12:12:30.163" endtime="20220627 12:12:30.171"/>
-</kw>
-<kw name="Get Page" library="functions">
-<var>${page}</var>
-<arg>${counter}</arg>
-<msg timestamp="20220627 12:12:30.171" level="INFO">${page} = 2</msg>
-<status status="PASS" starttime="20220627 12:12:30.171" endtime="20220627 12:12:30.171"/>
-</kw>
-<kw name="Get Index Company" library="functions">
-<var>${indexCompany}</var>
-<arg>${counter}</arg>
-<msg timestamp="20220627 12:12:30.171" level="INFO">${indexCompany} = 6</msg>
-<status status="PASS" starttime="20220627 12:12:30.171" endtime="20220627 12:12:30.171"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[${page}]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:30.172" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[2]'.</msg>
-<status status="PASS" starttime="20220627 12:12:30.171" endtime="20220627 12:12:30.203"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 12:12:32.207" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20220627 12:12:30.203" endtime="20220627 12:12:32.207"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="nacional"]/tbody/tr[${indexCompany}]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:32.207" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/tbody/tr[6]'.</msg>
-<status status="PASS" starttime="20220627 12:12:32.207" endtime="20220627 12:12:32.754"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${nombre}</var>
-<arg>xpath=//*[@id="titInner"]/div[1]/ul/li[5]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:32.772" level="INFO">${nombre} = / OL CONSULTORES SAS</msg>
-<status status="PASS" starttime="20220627 12:12:32.754" endtime="20220627 12:12:32.772"/>
-</kw>
-<kw name="Get Element Attribute" library="SeleniumLibrary">
-<var>${html_table}</var>
-<arg>//*[@id="imprimir"]/table</arg>
-<arg>outerHTML</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<msg timestamp="20220627 12:12:32.787" level="INFO">${html_table} = &lt;table align="center" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="tit_ficha" colspan="2"&gt;&lt;div class="seccion"&gt;Información Básica&lt;span&gt;&lt;img src="/templates/web/_img/_gfx/carpeta.gif"&gt;&lt;/span&gt;&lt;...</msg>
-<status status="PASS" starttime="20220627 12:12:32.772" endtime="20220627 12:12:32.787"/>
-</kw>
-<kw name="Process Table" library="functions">
-<arg>${html_table}</arg>
-<arg>${nombre}</arg>
-<status status="PASS" starttime="20220627 12:12:32.787" endtime="20220627 12:12:32.791"/>
-</kw>
-<kw name="To Camel" library="functions">
-<var>${ssfilename}</var>
-<arg>${nombre}</arg>
-<msg timestamp="20220627 12:12:32.792" level="INFO">${ssfilename} = /olconsultoressas</msg>
-<status status="PASS" starttime="20220627 12:12:32.791" endtime="20220627 12:12:32.792"/>
-</kw>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<arg>./screenshots/${ssfilename}.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20220627 12:12:32.951" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/olconsultoressas.png"&gt;&lt;img src="screenshots/olconsultoressas.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220627 12:12:32.792" endtime="20220627 12:12:32.951"/>
-</kw>
-<kw name="Go Back" library="SeleniumLibrary">
-<doc>Simulates the user clicking the back button on their browser.</doc>
-<status status="PASS" starttime="20220627 12:12:32.951" endtime="20220627 12:12:33.179"/>
-</kw>
-<status status="PASS" starttime="20220627 12:12:30.134" endtime="20220627 12:12:33.179"/>
-</iter>
-<iter>
-<var name="${counter}">7</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${resultsText}</var>
-<arg>xpath://*[@id="a_nacional"]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:33.197" level="INFO">${resultsText} = Empresas y Empresarios (59)</msg>
-<status status="PASS" starttime="20220627 12:12:33.179" endtime="20220627 12:12:33.197"/>
-</kw>
-<kw name="Get Number Results" library="functions">
-<var>${numberResults}</var>
-<arg>${resultsText}</arg>
-<msg timestamp="20220627 12:12:33.197" level="INFO">${numberResults} = 59</msg>
-<status status="PASS" starttime="20220627 12:12:33.197" endtime="20220627 12:12:33.197"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Denominación</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20220627 12:12:33.197" endtime="20220627 12:12:33.220"/>
-</kw>
-<kw name="Get Page" library="functions">
-<var>${page}</var>
-<arg>${counter}</arg>
-<msg timestamp="20220627 12:12:33.220" level="INFO">${page} = 2</msg>
-<status status="PASS" starttime="20220627 12:12:33.220" endtime="20220627 12:12:33.220"/>
-</kw>
-<kw name="Get Index Company" library="functions">
-<var>${indexCompany}</var>
-<arg>${counter}</arg>
-<msg timestamp="20220627 12:12:33.221" level="INFO">${indexCompany} = 7</msg>
-<status status="PASS" starttime="20220627 12:12:33.220" endtime="20220627 12:12:33.221"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[${page}]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:33.222" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[2]'.</msg>
-<status status="PASS" starttime="20220627 12:12:33.221" endtime="20220627 12:12:33.256"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 12:12:35.268" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20220627 12:12:33.256" endtime="20220627 12:12:35.268"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="nacional"]/tbody/tr[${indexCompany}]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:35.269" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/tbody/tr[7]'.</msg>
-<status status="PASS" starttime="20220627 12:12:35.268" endtime="20220627 12:12:35.806"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${nombre}</var>
-<arg>xpath=//*[@id="titInner"]/div[1]/ul/li[5]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:35.826" level="INFO">${nombre} = / LOPEZ JARAMILLO ORLANDO OL</msg>
-<status status="PASS" starttime="20220627 12:12:35.806" endtime="20220627 12:12:35.826"/>
-</kw>
-<kw name="Get Element Attribute" library="SeleniumLibrary">
-<var>${html_table}</var>
-<arg>//*[@id="imprimir"]/table</arg>
-<arg>outerHTML</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<msg timestamp="20220627 12:12:35.840" level="INFO">${html_table} = &lt;table align="center" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="tit_ficha" colspan="2"&gt;&lt;div class="seccion"&gt;Información Básica&lt;span&gt;&lt;img src="/templates/web/_img/_gfx/carpeta.gif"&gt;&lt;/span&gt;&lt;...</msg>
-<status status="PASS" starttime="20220627 12:12:35.826" endtime="20220627 12:12:35.840"/>
-</kw>
-<kw name="Process Table" library="functions">
-<arg>${html_table}</arg>
-<arg>${nombre}</arg>
-<status status="PASS" starttime="20220627 12:12:35.841" endtime="20220627 12:12:35.844"/>
-</kw>
-<kw name="To Camel" library="functions">
-<var>${ssfilename}</var>
-<arg>${nombre}</arg>
-<msg timestamp="20220627 12:12:35.845" level="INFO">${ssfilename} = /lopezjaramilloorlandool</msg>
-<status status="PASS" starttime="20220627 12:12:35.844" endtime="20220627 12:12:35.845"/>
-</kw>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<arg>./screenshots/${ssfilename}.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20220627 12:12:35.978" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/lopezjaramilloorlandool.png"&gt;&lt;img src="screenshots/lopezjaramilloorlandool.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220627 12:12:35.845" endtime="20220627 12:12:35.978"/>
-</kw>
-<kw name="Go Back" library="SeleniumLibrary">
-<doc>Simulates the user clicking the back button on their browser.</doc>
-<status status="PASS" starttime="20220627 12:12:35.978" endtime="20220627 12:12:36.206"/>
-</kw>
-<status status="PASS" starttime="20220627 12:12:33.179" endtime="20220627 12:12:36.206"/>
-</iter>
-<iter>
-<var name="${counter}">8</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${resultsText}</var>
-<arg>xpath://*[@id="a_nacional"]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:36.224" level="INFO">${resultsText} = Empresas y Empresarios (59)</msg>
-<status status="PASS" starttime="20220627 12:12:36.206" endtime="20220627 12:12:36.224"/>
-</kw>
-<kw name="Get Number Results" library="functions">
-<var>${numberResults}</var>
-<arg>${resultsText}</arg>
-<msg timestamp="20220627 12:12:36.224" level="INFO">${numberResults} = 59</msg>
-<status status="PASS" starttime="20220627 12:12:36.224" endtime="20220627 12:12:36.224"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Denominación</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20220627 12:12:36.224" endtime="20220627 12:12:36.230"/>
-</kw>
-<kw name="Get Page" library="functions">
-<var>${page}</var>
-<arg>${counter}</arg>
-<msg timestamp="20220627 12:12:36.230" level="INFO">${page} = 2</msg>
-<status status="PASS" starttime="20220627 12:12:36.230" endtime="20220627 12:12:36.231"/>
-</kw>
-<kw name="Get Index Company" library="functions">
-<var>${indexCompany}</var>
-<arg>${counter}</arg>
-<msg timestamp="20220627 12:12:36.231" level="INFO">${indexCompany} = 8</msg>
-<status status="PASS" starttime="20220627 12:12:36.231" endtime="20220627 12:12:36.231"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[${page}]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:36.231" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[2]'.</msg>
-<status status="PASS" starttime="20220627 12:12:36.231" endtime="20220627 12:12:36.265"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 12:12:38.266" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20220627 12:12:36.265" endtime="20220627 12:12:38.266"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="nacional"]/tbody/tr[${indexCompany}]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:38.267" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/tbody/tr[8]'.</msg>
-<status status="PASS" starttime="20220627 12:12:38.266" endtime="20220627 12:12:38.794"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${nombre}</var>
-<arg>xpath=//*[@id="titInner"]/div[1]/ul/li[5]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:38.812" level="INFO">${nombre} = / FUNDACI N OL CONSCIENTE</msg>
-<status status="PASS" starttime="20220627 12:12:38.794" endtime="20220627 12:12:38.812"/>
-</kw>
-<kw name="Get Element Attribute" library="SeleniumLibrary">
-<var>${html_table}</var>
-<arg>//*[@id="imprimir"]/table</arg>
-<arg>outerHTML</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<msg timestamp="20220627 12:12:38.827" level="INFO">${html_table} = &lt;table align="center" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="tit_ficha" colspan="2"&gt;&lt;div class="seccion"&gt;Información Básica&lt;span&gt;&lt;img src="/templates/web/_img/_gfx/carpeta.gif"&gt;&lt;/span&gt;&lt;...</msg>
-<status status="PASS" starttime="20220627 12:12:38.812" endtime="20220627 12:12:38.827"/>
-</kw>
-<kw name="Process Table" library="functions">
-<arg>${html_table}</arg>
-<arg>${nombre}</arg>
-<status status="PASS" starttime="20220627 12:12:38.827" endtime="20220627 12:12:38.831"/>
-</kw>
-<kw name="To Camel" library="functions">
-<var>${ssfilename}</var>
-<arg>${nombre}</arg>
-<msg timestamp="20220627 12:12:38.831" level="INFO">${ssfilename} = /fundacinolconsciente</msg>
-<status status="PASS" starttime="20220627 12:12:38.831" endtime="20220627 12:12:38.831"/>
-</kw>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<arg>./screenshots/${ssfilename}.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20220627 12:12:38.962" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/fundacinolconsciente.png"&gt;&lt;img src="screenshots/fundacinolconsciente.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220627 12:12:38.831" endtime="20220627 12:12:38.962"/>
-</kw>
-<kw name="Go Back" library="SeleniumLibrary">
-<doc>Simulates the user clicking the back button on their browser.</doc>
-<status status="PASS" starttime="20220627 12:12:38.963" endtime="20220627 12:12:39.211"/>
-</kw>
-<status status="PASS" starttime="20220627 12:12:36.206" endtime="20220627 12:12:39.211"/>
-</iter>
-<iter>
-<var name="${counter}">9</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${resultsText}</var>
-<arg>xpath://*[@id="a_nacional"]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:39.228" level="INFO">${resultsText} = Empresas y Empresarios (59)</msg>
-<status status="PASS" starttime="20220627 12:12:39.211" endtime="20220627 12:12:39.228"/>
-</kw>
-<kw name="Get Number Results" library="functions">
-<var>${numberResults}</var>
-<arg>${resultsText}</arg>
-<msg timestamp="20220627 12:12:39.228" level="INFO">${numberResults} = 59</msg>
-<status status="PASS" starttime="20220627 12:12:39.228" endtime="20220627 12:12:39.228"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Denominación</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20220627 12:12:39.228" endtime="20220627 12:12:39.235"/>
-</kw>
-<kw name="Get Page" library="functions">
-<var>${page}</var>
-<arg>${counter}</arg>
-<msg timestamp="20220627 12:12:39.235" level="INFO">${page} = 2</msg>
-<status status="PASS" starttime="20220627 12:12:39.235" endtime="20220627 12:12:39.235"/>
-</kw>
-<kw name="Get Index Company" library="functions">
-<var>${indexCompany}</var>
-<arg>${counter}</arg>
-<msg timestamp="20220627 12:12:39.235" level="INFO">${indexCompany} = 9</msg>
-<status status="PASS" starttime="20220627 12:12:39.235" endtime="20220627 12:12:39.235"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[${page}]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:39.236" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[2]'.</msg>
-<status status="PASS" starttime="20220627 12:12:39.235" endtime="20220627 12:12:39.268"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 12:12:41.276" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20220627 12:12:39.268" endtime="20220627 12:12:41.276"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="nacional"]/tbody/tr[${indexCompany}]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:41.277" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/tbody/tr[9]'.</msg>
-<status status="PASS" starttime="20220627 12:12:41.277" endtime="20220627 12:12:41.800"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${nombre}</var>
-<arg>xpath=//*[@id="titInner"]/div[1]/ul/li[5]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:41.818" level="INFO">${nombre} = / OL COMERSEG LTDA</msg>
-<status status="PASS" starttime="20220627 12:12:41.800" endtime="20220627 12:12:41.818"/>
-</kw>
-<kw name="Get Element Attribute" library="SeleniumLibrary">
-<var>${html_table}</var>
-<arg>//*[@id="imprimir"]/table</arg>
-<arg>outerHTML</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<msg timestamp="20220627 12:12:41.832" level="INFO">${html_table} = &lt;table align="center" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="tit_ficha" colspan="2"&gt;&lt;div class="seccion"&gt;Información Básica&lt;span&gt;&lt;img src="/templates/web/_img/_gfx/carpeta.gif"&gt;&lt;/span&gt;&lt;...</msg>
-<status status="PASS" starttime="20220627 12:12:41.819" endtime="20220627 12:12:41.833"/>
-</kw>
-<kw name="Process Table" library="functions">
-<arg>${html_table}</arg>
-<arg>${nombre}</arg>
-<status status="PASS" starttime="20220627 12:12:41.833" endtime="20220627 12:12:41.836"/>
-</kw>
-<kw name="To Camel" library="functions">
-<var>${ssfilename}</var>
-<arg>${nombre}</arg>
-<msg timestamp="20220627 12:12:41.837" level="INFO">${ssfilename} = /olcomersegltda</msg>
-<status status="PASS" starttime="20220627 12:12:41.836" endtime="20220627 12:12:41.837"/>
-</kw>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<arg>./screenshots/${ssfilename}.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20220627 12:12:41.966" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/olcomersegltda.png"&gt;&lt;img src="screenshots/olcomersegltda.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220627 12:12:41.837" endtime="20220627 12:12:41.966"/>
-</kw>
-<kw name="Go Back" library="SeleniumLibrary">
-<doc>Simulates the user clicking the back button on their browser.</doc>
-<status status="PASS" starttime="20220627 12:12:41.967" endtime="20220627 12:12:42.257"/>
-</kw>
-<status status="PASS" starttime="20220627 12:12:39.211" endtime="20220627 12:12:42.257"/>
-</iter>
-<iter>
-<var name="${counter}">10</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${resultsText}</var>
-<arg>xpath://*[@id="a_nacional"]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:42.274" level="INFO">${resultsText} = Empresas y Empresarios (59)</msg>
-<status status="PASS" starttime="20220627 12:12:42.257" endtime="20220627 12:12:42.274"/>
-</kw>
-<kw name="Get Number Results" library="functions">
-<var>${numberResults}</var>
-<arg>${resultsText}</arg>
-<msg timestamp="20220627 12:12:42.274" level="INFO">${numberResults} = 59</msg>
-<status status="PASS" starttime="20220627 12:12:42.274" endtime="20220627 12:12:42.274"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Denominación</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20220627 12:12:42.274" endtime="20220627 12:12:42.281"/>
-</kw>
-<kw name="Get Page" library="functions">
-<var>${page}</var>
-<arg>${counter}</arg>
-<msg timestamp="20220627 12:12:42.282" level="INFO">${page} = 2</msg>
-<status status="PASS" starttime="20220627 12:12:42.281" endtime="20220627 12:12:42.282"/>
-</kw>
-<kw name="Get Index Company" library="functions">
-<var>${indexCompany}</var>
-<arg>${counter}</arg>
-<msg timestamp="20220627 12:12:42.282" level="INFO">${indexCompany} = 10</msg>
-<status status="PASS" starttime="20220627 12:12:42.282" endtime="20220627 12:12:42.282"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[${page}]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:42.282" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[2]'.</msg>
-<status status="PASS" starttime="20220627 12:12:42.282" endtime="20220627 12:12:42.314"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 12:12:44.327" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20220627 12:12:42.314" endtime="20220627 12:12:44.327"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="nacional"]/tbody/tr[${indexCompany}]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:44.327" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/tbody/tr[10]'.</msg>
-<status status="PASS" starttime="20220627 12:12:44.327" endtime="20220627 12:12:44.889"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${nombre}</var>
-<arg>xpath=//*[@id="titInner"]/div[1]/ul/li[5]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:44.908" level="INFO">${nombre} = / ESPA OL LARROTTA EDGAR</msg>
-<status status="PASS" starttime="20220627 12:12:44.889" endtime="20220627 12:12:44.908"/>
-</kw>
-<kw name="Get Element Attribute" library="SeleniumLibrary">
-<var>${html_table}</var>
-<arg>//*[@id="imprimir"]/table</arg>
-<arg>outerHTML</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<msg timestamp="20220627 12:12:44.923" level="INFO">${html_table} = &lt;table align="center" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="tit_ficha" colspan="2"&gt;&lt;div class="seccion"&gt;Información Básica&lt;span&gt;&lt;img src="/templates/web/_img/_gfx/carpeta.gif"&gt;&lt;/span&gt;&lt;...</msg>
-<status status="PASS" starttime="20220627 12:12:44.908" endtime="20220627 12:12:44.923"/>
-</kw>
-<kw name="Process Table" library="functions">
-<arg>${html_table}</arg>
-<arg>${nombre}</arg>
-<status status="PASS" starttime="20220627 12:12:44.923" endtime="20220627 12:12:44.926"/>
-</kw>
-<kw name="To Camel" library="functions">
-<var>${ssfilename}</var>
-<arg>${nombre}</arg>
-<msg timestamp="20220627 12:12:44.927" level="INFO">${ssfilename} = /espaollarrottaedgar</msg>
-<status status="PASS" starttime="20220627 12:12:44.926" endtime="20220627 12:12:44.927"/>
-</kw>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<arg>./screenshots/${ssfilename}.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20220627 12:12:45.067" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/espaollarrottaedgar.png"&gt;&lt;img src="screenshots/espaollarrottaedgar.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220627 12:12:44.927" endtime="20220627 12:12:45.067"/>
-</kw>
-<kw name="Go Back" library="SeleniumLibrary">
-<doc>Simulates the user clicking the back button on their browser.</doc>
-<status status="PASS" starttime="20220627 12:12:45.067" endtime="20220627 12:12:45.312"/>
-</kw>
-<status status="PASS" starttime="20220627 12:12:42.257" endtime="20220627 12:12:45.312"/>
-</iter>
-<iter>
-<var name="${counter}">11</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${resultsText}</var>
-<arg>xpath://*[@id="a_nacional"]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:45.328" level="INFO">${resultsText} = Empresas y Empresarios (59)</msg>
-<status status="PASS" starttime="20220627 12:12:45.312" endtime="20220627 12:12:45.328"/>
-</kw>
-<kw name="Get Number Results" library="functions">
-<var>${numberResults}</var>
-<arg>${resultsText}</arg>
-<msg timestamp="20220627 12:12:45.328" level="INFO">${numberResults} = 59</msg>
-<status status="PASS" starttime="20220627 12:12:45.328" endtime="20220627 12:12:45.328"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Denominación</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20220627 12:12:45.328" endtime="20220627 12:12:45.335"/>
-</kw>
-<kw name="Get Page" library="functions">
-<var>${page}</var>
-<arg>${counter}</arg>
-<msg timestamp="20220627 12:12:45.335" level="INFO">${page} = 2</msg>
-<status status="PASS" starttime="20220627 12:12:45.335" endtime="20220627 12:12:45.336"/>
-</kw>
-<kw name="Get Index Company" library="functions">
-<var>${indexCompany}</var>
-<arg>${counter}</arg>
-<msg timestamp="20220627 12:12:45.336" level="INFO">${indexCompany} = 11</msg>
-<status status="PASS" starttime="20220627 12:12:45.336" endtime="20220627 12:12:45.336"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[${page}]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:45.336" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[2]'.</msg>
-<status status="PASS" starttime="20220627 12:12:45.336" endtime="20220627 12:12:45.367"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 12:12:47.376" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20220627 12:12:45.367" endtime="20220627 12:12:47.376"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="nacional"]/tbody/tr[${indexCompany}]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:47.377" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/tbody/tr[11]'.</msg>
-<status status="PASS" starttime="20220627 12:12:47.376" endtime="20220627 12:12:47.890"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${nombre}</var>
-<arg>xpath=//*[@id="titInner"]/div[1]/ul/li[5]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:47.912" level="INFO">${nombre} = / ORTEGA OL JORGE ARMANDO</msg>
-<status status="PASS" starttime="20220627 12:12:47.891" endtime="20220627 12:12:47.912"/>
-</kw>
-<kw name="Get Element Attribute" library="SeleniumLibrary">
-<var>${html_table}</var>
-<arg>//*[@id="imprimir"]/table</arg>
-<arg>outerHTML</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<msg timestamp="20220627 12:12:47.938" level="INFO">${html_table} = &lt;table align="center" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="tit_ficha" colspan="2"&gt;&lt;div class="seccion"&gt;Información Básica&lt;span&gt;&lt;img src="/templates/web/_img/_gfx/carpeta.gif"&gt;&lt;/span&gt;&lt;...</msg>
-<status status="PASS" starttime="20220627 12:12:47.912" endtime="20220627 12:12:47.938"/>
-</kw>
-<kw name="Process Table" library="functions">
-<arg>${html_table}</arg>
-<arg>${nombre}</arg>
-<status status="PASS" starttime="20220627 12:12:47.938" endtime="20220627 12:12:47.942"/>
-</kw>
-<kw name="To Camel" library="functions">
-<var>${ssfilename}</var>
-<arg>${nombre}</arg>
-<msg timestamp="20220627 12:12:47.942" level="INFO">${ssfilename} = /ortegaoljorgearmando</msg>
-<status status="PASS" starttime="20220627 12:12:47.942" endtime="20220627 12:12:47.942"/>
-</kw>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<arg>./screenshots/${ssfilename}.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20220627 12:12:48.088" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/ortegaoljorgearmando.png"&gt;&lt;img src="screenshots/ortegaoljorgearmando.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220627 12:12:47.942" endtime="20220627 12:12:48.088"/>
-</kw>
-<kw name="Go Back" library="SeleniumLibrary">
-<doc>Simulates the user clicking the back button on their browser.</doc>
-<status status="PASS" starttime="20220627 12:12:48.088" endtime="20220627 12:12:48.327"/>
-</kw>
-<status status="PASS" starttime="20220627 12:12:45.312" endtime="20220627 12:12:48.327"/>
-</iter>
-<iter>
-<var name="${counter}">12</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${resultsText}</var>
-<arg>xpath://*[@id="a_nacional"]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:48.345" level="INFO">${resultsText} = Empresas y Empresarios (59)</msg>
-<status status="PASS" starttime="20220627 12:12:48.327" endtime="20220627 12:12:48.345"/>
-</kw>
-<kw name="Get Number Results" library="functions">
-<var>${numberResults}</var>
-<arg>${resultsText}</arg>
-<msg timestamp="20220627 12:12:48.345" level="INFO">${numberResults} = 59</msg>
-<status status="PASS" starttime="20220627 12:12:48.345" endtime="20220627 12:12:48.345"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Denominación</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20220627 12:12:48.345" endtime="20220627 12:12:48.352"/>
-</kw>
-<kw name="Get Page" library="functions">
-<var>${page}</var>
-<arg>${counter}</arg>
-<msg timestamp="20220627 12:12:48.352" level="INFO">${page} = 2</msg>
-<status status="PASS" starttime="20220627 12:12:48.352" endtime="20220627 12:12:48.352"/>
-</kw>
-<kw name="Get Index Company" library="functions">
-<var>${indexCompany}</var>
-<arg>${counter}</arg>
-<msg timestamp="20220627 12:12:48.353" level="INFO">${indexCompany} = 12</msg>
-<status status="PASS" starttime="20220627 12:12:48.353" endtime="20220627 12:12:48.353"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[${page}]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:48.354" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[2]'.</msg>
-<status status="PASS" starttime="20220627 12:12:48.353" endtime="20220627 12:12:48.385"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 12:12:50.400" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20220627 12:12:48.385" endtime="20220627 12:12:50.400"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="nacional"]/tbody/tr[${indexCompany}]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:50.401" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/tbody/tr[12]'.</msg>
-<status status="PASS" starttime="20220627 12:12:50.401" endtime="20220627 12:12:50.918"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${nombre}</var>
-<arg>xpath=//*[@id="titInner"]/div[1]/ul/li[5]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:50.945" level="INFO">${nombre} = / OL INGENIERIA SAS</msg>
-<status status="PASS" starttime="20220627 12:12:50.918" endtime="20220627 12:12:50.945"/>
-</kw>
-<kw name="Get Element Attribute" library="SeleniumLibrary">
-<var>${html_table}</var>
-<arg>//*[@id="imprimir"]/table</arg>
-<arg>outerHTML</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<msg timestamp="20220627 12:12:50.965" level="INFO">${html_table} = &lt;table align="center" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="tit_ficha" colspan="2"&gt;&lt;div class="seccion"&gt;Información Básica&lt;span&gt;&lt;img src="/templates/web/_img/_gfx/carpeta.gif"&gt;&lt;/span&gt;&lt;...</msg>
-<status status="PASS" starttime="20220627 12:12:50.945" endtime="20220627 12:12:50.965"/>
-</kw>
-<kw name="Process Table" library="functions">
-<arg>${html_table}</arg>
-<arg>${nombre}</arg>
-<status status="PASS" starttime="20220627 12:12:50.965" endtime="20220627 12:12:50.968"/>
-</kw>
-<kw name="To Camel" library="functions">
-<var>${ssfilename}</var>
-<arg>${nombre}</arg>
-<msg timestamp="20220627 12:12:50.969" level="INFO">${ssfilename} = /olingenieriasas</msg>
-<status status="PASS" starttime="20220627 12:12:50.968" endtime="20220627 12:12:50.969"/>
-</kw>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<arg>./screenshots/${ssfilename}.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20220627 12:12:51.115" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/olingenieriasas.png"&gt;&lt;img src="screenshots/olingenieriasas.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220627 12:12:50.969" endtime="20220627 12:12:51.115"/>
-</kw>
-<kw name="Go Back" library="SeleniumLibrary">
-<doc>Simulates the user clicking the back button on their browser.</doc>
-<status status="PASS" starttime="20220627 12:12:51.115" endtime="20220627 12:12:51.354"/>
-</kw>
-<status status="PASS" starttime="20220627 12:12:48.327" endtime="20220627 12:12:51.354"/>
-</iter>
-<iter>
-<var name="${counter}">13</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${resultsText}</var>
-<arg>xpath://*[@id="a_nacional"]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:51.373" level="INFO">${resultsText} = Empresas y Empresarios (59)</msg>
-<status status="PASS" starttime="20220627 12:12:51.354" endtime="20220627 12:12:51.373"/>
-</kw>
-<kw name="Get Number Results" library="functions">
-<var>${numberResults}</var>
-<arg>${resultsText}</arg>
-<msg timestamp="20220627 12:12:51.373" level="INFO">${numberResults} = 59</msg>
-<status status="PASS" starttime="20220627 12:12:51.373" endtime="20220627 12:12:51.373"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Denominación</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20220627 12:12:51.373" endtime="20220627 12:12:51.380"/>
-</kw>
-<kw name="Get Page" library="functions">
-<var>${page}</var>
-<arg>${counter}</arg>
-<msg timestamp="20220627 12:12:51.381" level="INFO">${page} = 3</msg>
-<status status="PASS" starttime="20220627 12:12:51.381" endtime="20220627 12:12:51.381"/>
-</kw>
-<kw name="Get Index Company" library="functions">
-<var>${indexCompany}</var>
-<arg>${counter}</arg>
-<msg timestamp="20220627 12:12:51.381" level="INFO">${indexCompany} = 1</msg>
-<status status="PASS" starttime="20220627 12:12:51.381" endtime="20220627 12:12:51.381"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[${page}]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:51.381" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[3]'.</msg>
-<status status="PASS" starttime="20220627 12:12:51.381" endtime="20220627 12:12:51.892"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 12:12:53.902" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20220627 12:12:51.893" endtime="20220627 12:12:53.902"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="nacional"]/tbody/tr[${indexCompany}]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:53.903" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/tbody/tr[1]'.</msg>
-<status status="PASS" starttime="20220627 12:12:53.902" endtime="20220627 12:12:54.435"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${nombre}</var>
-<arg>xpath=//*[@id="titInner"]/div[1]/ul/li[5]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:54.455" level="INFO">${nombre} = / SOLUCIONES LOGISTICAS PC S A S</msg>
-<status status="PASS" starttime="20220627 12:12:54.435" endtime="20220627 12:12:54.455"/>
-</kw>
-<kw name="Get Element Attribute" library="SeleniumLibrary">
-<var>${html_table}</var>
-<arg>//*[@id="imprimir"]/table</arg>
-<arg>outerHTML</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<msg timestamp="20220627 12:12:54.469" level="INFO">${html_table} = &lt;table align="center" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="tit_ficha" colspan="2"&gt;&lt;div class="seccion"&gt;Información Básica&lt;span&gt;&lt;img src="/templates/web/_img/_gfx/carpeta.gif"&gt;&lt;/span&gt;&lt;...</msg>
-<status status="PASS" starttime="20220627 12:12:54.455" endtime="20220627 12:12:54.469"/>
-</kw>
-<kw name="Process Table" library="functions">
-<arg>${html_table}</arg>
-<arg>${nombre}</arg>
-<status status="PASS" starttime="20220627 12:12:54.469" endtime="20220627 12:12:54.473"/>
-</kw>
-<kw name="To Camel" library="functions">
-<var>${ssfilename}</var>
-<arg>${nombre}</arg>
-<msg timestamp="20220627 12:12:54.474" level="INFO">${ssfilename} = /solucioneslogisticaspcsas</msg>
-<status status="PASS" starttime="20220627 12:12:54.473" endtime="20220627 12:12:54.474"/>
-</kw>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<arg>./screenshots/${ssfilename}.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20220627 12:12:54.615" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/solucioneslogisticaspcsas.png"&gt;&lt;img src="screenshots/solucioneslogisticaspcsas.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220627 12:12:54.474" endtime="20220627 12:12:54.615"/>
-</kw>
-<kw name="Go Back" library="SeleniumLibrary">
-<doc>Simulates the user clicking the back button on their browser.</doc>
-<status status="PASS" starttime="20220627 12:12:54.615" endtime="20220627 12:12:54.970"/>
-</kw>
-<status status="PASS" starttime="20220627 12:12:51.354" endtime="20220627 12:12:54.970"/>
-</iter>
-<iter>
-<var name="${counter}">14</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${resultsText}</var>
-<arg>xpath://*[@id="a_nacional"]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:54.988" level="INFO">${resultsText} = Empresas y Empresarios (59)</msg>
-<status status="PASS" starttime="20220627 12:12:54.970" endtime="20220627 12:12:54.988"/>
-</kw>
-<kw name="Get Number Results" library="functions">
-<var>${numberResults}</var>
-<arg>${resultsText}</arg>
-<msg timestamp="20220627 12:12:54.988" level="INFO">${numberResults} = 59</msg>
-<status status="PASS" starttime="20220627 12:12:54.988" endtime="20220627 12:12:54.988"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Denominación</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20220627 12:12:54.988" endtime="20220627 12:12:54.996"/>
-</kw>
-<kw name="Get Page" library="functions">
-<var>${page}</var>
-<arg>${counter}</arg>
-<msg timestamp="20220627 12:12:54.997" level="INFO">${page} = 3</msg>
-<status status="PASS" starttime="20220627 12:12:54.996" endtime="20220627 12:12:54.997"/>
-</kw>
-<kw name="Get Index Company" library="functions">
-<var>${indexCompany}</var>
-<arg>${counter}</arg>
-<msg timestamp="20220627 12:12:54.997" level="INFO">${indexCompany} = 2</msg>
-<status status="PASS" starttime="20220627 12:12:54.997" endtime="20220627 12:12:54.997"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[${page}]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:54.997" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[3]'.</msg>
-<status status="PASS" starttime="20220627 12:12:54.997" endtime="20220627 12:12:55.029"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 12:12:57.029" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20220627 12:12:55.029" endtime="20220627 12:12:57.029"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="nacional"]/tbody/tr[${indexCompany}]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:57.030" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/tbody/tr[2]'.</msg>
-<status status="PASS" starttime="20220627 12:12:57.029" endtime="20220627 12:12:57.559"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${nombre}</var>
-<arg>xpath=//*[@id="titInner"]/div[1]/ul/li[5]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:57.580" level="INFO">${nombre} = / PHENIX OL IMPRESORES SAS</msg>
-<status status="PASS" starttime="20220627 12:12:57.559" endtime="20220627 12:12:57.580"/>
-</kw>
-<kw name="Get Element Attribute" library="SeleniumLibrary">
-<var>${html_table}</var>
-<arg>//*[@id="imprimir"]/table</arg>
-<arg>outerHTML</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<msg timestamp="20220627 12:12:57.596" level="INFO">${html_table} = &lt;table align="center" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="tit_ficha" colspan="2"&gt;&lt;div class="seccion"&gt;Información Básica&lt;span&gt;&lt;img src="/templates/web/_img/_gfx/carpeta.gif"&gt;&lt;/span&gt;&lt;...</msg>
-<status status="PASS" starttime="20220627 12:12:57.580" endtime="20220627 12:12:57.596"/>
-</kw>
-<kw name="Process Table" library="functions">
-<arg>${html_table}</arg>
-<arg>${nombre}</arg>
-<status status="PASS" starttime="20220627 12:12:57.596" endtime="20220627 12:12:57.601"/>
-</kw>
-<kw name="To Camel" library="functions">
-<var>${ssfilename}</var>
-<arg>${nombre}</arg>
-<msg timestamp="20220627 12:12:57.601" level="INFO">${ssfilename} = /phenixolimpresoressas</msg>
-<status status="PASS" starttime="20220627 12:12:57.601" endtime="20220627 12:12:57.601"/>
-</kw>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<arg>./screenshots/${ssfilename}.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20220627 12:12:57.757" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/phenixolimpresoressas.png"&gt;&lt;img src="screenshots/phenixolimpresoressas.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220627 12:12:57.601" endtime="20220627 12:12:57.757"/>
-</kw>
-<kw name="Go Back" library="SeleniumLibrary">
-<doc>Simulates the user clicking the back button on their browser.</doc>
-<status status="PASS" starttime="20220627 12:12:57.757" endtime="20220627 12:12:58.096"/>
-</kw>
-<status status="PASS" starttime="20220627 12:12:54.970" endtime="20220627 12:12:58.096"/>
-</iter>
-<iter>
-<var name="${counter}">15</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${resultsText}</var>
-<arg>xpath://*[@id="a_nacional"]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:58.114" level="INFO">${resultsText} = Empresas y Empresarios (59)</msg>
-<status status="PASS" starttime="20220627 12:12:58.097" endtime="20220627 12:12:58.114"/>
-</kw>
-<kw name="Get Number Results" library="functions">
-<var>${numberResults}</var>
-<arg>${resultsText}</arg>
-<msg timestamp="20220627 12:12:58.114" level="INFO">${numberResults} = 59</msg>
-<status status="PASS" starttime="20220627 12:12:58.114" endtime="20220627 12:12:58.114"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Denominación</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20220627 12:12:58.114" endtime="20220627 12:12:58.121"/>
-</kw>
-<kw name="Get Page" library="functions">
-<var>${page}</var>
-<arg>${counter}</arg>
-<msg timestamp="20220627 12:12:58.121" level="INFO">${page} = 3</msg>
-<status status="PASS" starttime="20220627 12:12:58.121" endtime="20220627 12:12:58.121"/>
-</kw>
-<kw name="Get Index Company" library="functions">
-<var>${indexCompany}</var>
-<arg>${counter}</arg>
-<msg timestamp="20220627 12:12:58.122" level="INFO">${indexCompany} = 3</msg>
-<status status="PASS" starttime="20220627 12:12:58.122" endtime="20220627 12:12:58.122"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[${page}]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:12:58.122" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[3]'.</msg>
-<status status="PASS" starttime="20220627 12:12:58.122" endtime="20220627 12:12:58.158"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 12:13:00.159" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20220627 12:12:58.159" endtime="20220627 12:13:00.159"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="nacional"]/tbody/tr[${indexCompany}]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:13:00.159" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/tbody/tr[3]'.</msg>
-<status status="PASS" starttime="20220627 12:13:00.159" endtime="20220627 12:13:00.930"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${nombre}</var>
-<arg>xpath=//*[@id="titInner"]/div[1]/ul/li[5]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:13:00.951" level="INFO">${nombre} = / OL ARTE SAS</msg>
-<status status="PASS" starttime="20220627 12:13:00.930" endtime="20220627 12:13:00.951"/>
-</kw>
-<kw name="Get Element Attribute" library="SeleniumLibrary">
-<var>${html_table}</var>
-<arg>//*[@id="imprimir"]/table</arg>
-<arg>outerHTML</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<msg timestamp="20220627 12:13:00.978" level="INFO">${html_table} = &lt;table align="center" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="tit_ficha" colspan="2"&gt;&lt;div class="seccion"&gt;Información Básica&lt;span&gt;&lt;img src="/templates/web/_img/_gfx/carpeta.gif"&gt;&lt;/span&gt;&lt;...</msg>
-<status status="PASS" starttime="20220627 12:13:00.951" endtime="20220627 12:13:00.978"/>
-</kw>
-<kw name="Process Table" library="functions">
-<arg>${html_table}</arg>
-<arg>${nombre}</arg>
-<status status="PASS" starttime="20220627 12:13:00.979" endtime="20220627 12:13:00.983"/>
-</kw>
-<kw name="To Camel" library="functions">
-<var>${ssfilename}</var>
-<arg>${nombre}</arg>
-<msg timestamp="20220627 12:13:00.983" level="INFO">${ssfilename} = /olartesas</msg>
-<status status="PASS" starttime="20220627 12:13:00.983" endtime="20220627 12:13:00.983"/>
-</kw>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<arg>./screenshots/${ssfilename}.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20220627 12:13:01.125" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/olartesas.png"&gt;&lt;img src="screenshots/olartesas.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220627 12:13:00.983" endtime="20220627 12:13:01.125"/>
-</kw>
-<kw name="Go Back" library="SeleniumLibrary">
-<doc>Simulates the user clicking the back button on their browser.</doc>
-<status status="PASS" starttime="20220627 12:13:01.125" endtime="20220627 12:13:01.365"/>
-</kw>
-<status status="PASS" starttime="20220627 12:12:58.096" endtime="20220627 12:13:01.365"/>
-</iter>
-<iter>
-<var name="${counter}">16</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${resultsText}</var>
-<arg>xpath://*[@id="a_nacional"]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:13:01.384" level="INFO">${resultsText} = Empresas y Empresarios (59)</msg>
-<status status="PASS" starttime="20220627 12:13:01.365" endtime="20220627 12:13:01.384"/>
-</kw>
-<kw name="Get Number Results" library="functions">
-<var>${numberResults}</var>
-<arg>${resultsText}</arg>
-<msg timestamp="20220627 12:13:01.384" level="INFO">${numberResults} = 59</msg>
-<status status="PASS" starttime="20220627 12:13:01.384" endtime="20220627 12:13:01.384"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Denominación</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20220627 12:13:01.384" endtime="20220627 12:13:01.392"/>
-</kw>
-<kw name="Get Page" library="functions">
-<var>${page}</var>
-<arg>${counter}</arg>
-<msg timestamp="20220627 12:13:01.392" level="INFO">${page} = 3</msg>
-<status status="PASS" starttime="20220627 12:13:01.392" endtime="20220627 12:13:01.392"/>
-</kw>
-<kw name="Get Index Company" library="functions">
-<var>${indexCompany}</var>
-<arg>${counter}</arg>
-<msg timestamp="20220627 12:13:01.393" level="INFO">${indexCompany} = 4</msg>
-<status status="PASS" starttime="20220627 12:13:01.393" endtime="20220627 12:13:01.393"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[${page}]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:13:01.393" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[3]'.</msg>
-<status status="PASS" starttime="20220627 12:13:01.393" endtime="20220627 12:13:01.424"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 12:13:03.435" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20220627 12:13:01.424" endtime="20220627 12:13:03.435"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="nacional"]/tbody/tr[${indexCompany}]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:13:03.435" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/tbody/tr[4]'.</msg>
-<status status="PASS" starttime="20220627 12:13:03.435" endtime="20220627 12:13:03.944"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${nombre}</var>
-<arg>xpath=//*[@id="titInner"]/div[1]/ul/li[5]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:13:03.965" level="INFO">${nombre} = / OL PRODUCCIONES GRAFICAS SAS</msg>
-<status status="PASS" starttime="20220627 12:13:03.945" endtime="20220627 12:13:03.965"/>
-</kw>
-<kw name="Get Element Attribute" library="SeleniumLibrary">
-<var>${html_table}</var>
-<arg>//*[@id="imprimir"]/table</arg>
-<arg>outerHTML</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<msg timestamp="20220627 12:13:03.980" level="INFO">${html_table} = &lt;table align="center" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="tit_ficha" colspan="2"&gt;&lt;div class="seccion"&gt;Información Básica&lt;span&gt;&lt;img src="/templates/web/_img/_gfx/carpeta.gif"&gt;&lt;/span&gt;&lt;...</msg>
-<status status="PASS" starttime="20220627 12:13:03.965" endtime="20220627 12:13:03.980"/>
-</kw>
-<kw name="Process Table" library="functions">
-<arg>${html_table}</arg>
-<arg>${nombre}</arg>
-<status status="PASS" starttime="20220627 12:13:03.980" endtime="20220627 12:13:03.983"/>
-</kw>
-<kw name="To Camel" library="functions">
-<var>${ssfilename}</var>
-<arg>${nombre}</arg>
-<msg timestamp="20220627 12:13:03.984" level="INFO">${ssfilename} = /olproduccionesgraficassas</msg>
-<status status="PASS" starttime="20220627 12:13:03.983" endtime="20220627 12:13:03.984"/>
-</kw>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<arg>./screenshots/${ssfilename}.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20220627 12:13:04.128" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/olproduccionesgraficassas.png"&gt;&lt;img src="screenshots/olproduccionesgraficassas.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220627 12:13:03.984" endtime="20220627 12:13:04.129"/>
-</kw>
-<kw name="Go Back" library="SeleniumLibrary">
-<doc>Simulates the user clicking the back button on their browser.</doc>
-<status status="PASS" starttime="20220627 12:13:04.129" endtime="20220627 12:13:04.404"/>
-</kw>
-<status status="PASS" starttime="20220627 12:13:01.365" endtime="20220627 12:13:04.404"/>
-</iter>
-<iter>
-<var name="${counter}">17</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${resultsText}</var>
-<arg>xpath://*[@id="a_nacional"]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:13:04.420" level="INFO">${resultsText} = Empresas y Empresarios (59)</msg>
-<status status="PASS" starttime="20220627 12:13:04.404" endtime="20220627 12:13:04.420"/>
-</kw>
-<kw name="Get Number Results" library="functions">
-<var>${numberResults}</var>
-<arg>${resultsText}</arg>
-<msg timestamp="20220627 12:13:04.420" level="INFO">${numberResults} = 59</msg>
-<status status="PASS" starttime="20220627 12:13:04.420" endtime="20220627 12:13:04.420"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Denominación</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20220627 12:13:04.420" endtime="20220627 12:13:04.428"/>
-</kw>
-<kw name="Get Page" library="functions">
-<var>${page}</var>
-<arg>${counter}</arg>
-<msg timestamp="20220627 12:13:04.429" level="INFO">${page} = 3</msg>
-<status status="PASS" starttime="20220627 12:13:04.428" endtime="20220627 12:13:04.429"/>
-</kw>
-<kw name="Get Index Company" library="functions">
-<var>${indexCompany}</var>
-<arg>${counter}</arg>
-<msg timestamp="20220627 12:13:04.429" level="INFO">${indexCompany} = 5</msg>
-<status status="PASS" starttime="20220627 12:13:04.429" endtime="20220627 12:13:04.429"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[${page}]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:13:04.429" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[3]'.</msg>
-<status status="PASS" starttime="20220627 12:13:04.429" endtime="20220627 12:13:04.459"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 12:13:06.474" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20220627 12:13:04.459" endtime="20220627 12:13:06.474"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="nacional"]/tbody/tr[${indexCompany}]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:13:06.475" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/tbody/tr[5]'.</msg>
-<status status="PASS" starttime="20220627 12:13:06.474" endtime="20220627 12:13:07.053"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${nombre}</var>
-<arg>xpath=//*[@id="titInner"]/div[1]/ul/li[5]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:13:07.081" level="INFO">${nombre} = / GOMEZ OLGA LUCIA</msg>
-<status status="PASS" starttime="20220627 12:13:07.054" endtime="20220627 12:13:07.081"/>
-</kw>
-<kw name="Get Element Attribute" library="SeleniumLibrary">
-<var>${html_table}</var>
-<arg>//*[@id="imprimir"]/table</arg>
-<arg>outerHTML</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<msg timestamp="20220627 12:13:07.098" level="INFO">${html_table} = &lt;table align="center" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="tit_ficha" colspan="2"&gt;&lt;div class="seccion"&gt;Información Básica&lt;span&gt;&lt;img src="/templates/web/_img/_gfx/carpeta.gif"&gt;&lt;/span&gt;&lt;...</msg>
-<status status="PASS" starttime="20220627 12:13:07.082" endtime="20220627 12:13:07.098"/>
-</kw>
-<kw name="Process Table" library="functions">
-<arg>${html_table}</arg>
-<arg>${nombre}</arg>
-<status status="PASS" starttime="20220627 12:13:07.098" endtime="20220627 12:13:07.101"/>
-</kw>
-<kw name="To Camel" library="functions">
-<var>${ssfilename}</var>
-<arg>${nombre}</arg>
-<msg timestamp="20220627 12:13:07.102" level="INFO">${ssfilename} = /gomezolgalucia</msg>
-<status status="PASS" starttime="20220627 12:13:07.101" endtime="20220627 12:13:07.102"/>
-</kw>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<arg>./screenshots/${ssfilename}.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20220627 12:13:07.234" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/gomezolgalucia.png"&gt;&lt;img src="screenshots/gomezolgalucia.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220627 12:13:07.102" endtime="20220627 12:13:07.234"/>
-</kw>
-<kw name="Go Back" library="SeleniumLibrary">
-<doc>Simulates the user clicking the back button on their browser.</doc>
-<status status="PASS" starttime="20220627 12:13:07.234" endtime="20220627 12:13:07.524"/>
-</kw>
-<status status="PASS" starttime="20220627 12:13:04.404" endtime="20220627 12:13:07.524"/>
-</iter>
-<iter>
-<var name="${counter}">18</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${resultsText}</var>
-<arg>xpath://*[@id="a_nacional"]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:13:07.544" level="INFO">${resultsText} = Empresas y Empresarios (59)</msg>
-<status status="PASS" starttime="20220627 12:13:07.524" endtime="20220627 12:13:07.544"/>
-</kw>
-<kw name="Get Number Results" library="functions">
-<var>${numberResults}</var>
-<arg>${resultsText}</arg>
-<msg timestamp="20220627 12:13:07.544" level="INFO">${numberResults} = 59</msg>
-<status status="PASS" starttime="20220627 12:13:07.544" endtime="20220627 12:13:07.545"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Denominación</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20220627 12:13:07.545" endtime="20220627 12:13:07.552"/>
-</kw>
-<kw name="Get Page" library="functions">
-<var>${page}</var>
-<arg>${counter}</arg>
-<msg timestamp="20220627 12:13:07.553" level="INFO">${page} = 3</msg>
-<status status="PASS" starttime="20220627 12:13:07.552" endtime="20220627 12:13:07.553"/>
-</kw>
-<kw name="Get Index Company" library="functions">
-<var>${indexCompany}</var>
-<arg>${counter}</arg>
-<msg timestamp="20220627 12:13:07.553" level="INFO">${indexCompany} = 6</msg>
-<status status="PASS" starttime="20220627 12:13:07.553" endtime="20220627 12:13:07.553"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[${page}]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:13:07.554" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[3]'.</msg>
-<status status="PASS" starttime="20220627 12:13:07.554" endtime="20220627 12:13:07.586"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 12:13:09.595" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20220627 12:13:07.586" endtime="20220627 12:13:09.595"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="nacional"]/tbody/tr[${indexCompany}]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:13:09.595" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/tbody/tr[6]'.</msg>
-<status status="PASS" starttime="20220627 12:13:09.595" endtime="20220627 12:13:10.154"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${nombre}</var>
-<arg>xpath=//*[@id="titInner"]/div[1]/ul/li[5]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:13:10.175" level="INFO">${nombre} = / INVERSIONES SOPHIA OL SAS</msg>
-<status status="PASS" starttime="20220627 12:13:10.154" endtime="20220627 12:13:10.175"/>
-</kw>
-<kw name="Get Element Attribute" library="SeleniumLibrary">
-<var>${html_table}</var>
-<arg>//*[@id="imprimir"]/table</arg>
-<arg>outerHTML</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<msg timestamp="20220627 12:13:10.190" level="INFO">${html_table} = &lt;table align="center" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="tit_ficha" colspan="2"&gt;&lt;div class="seccion"&gt;Información Básica&lt;span&gt;&lt;img src="/templates/web/_img/_gfx/carpeta.gif"&gt;&lt;/span&gt;&lt;...</msg>
-<status status="PASS" starttime="20220627 12:13:10.175" endtime="20220627 12:13:10.190"/>
-</kw>
-<kw name="Process Table" library="functions">
-<arg>${html_table}</arg>
-<arg>${nombre}</arg>
-<status status="PASS" starttime="20220627 12:13:10.190" endtime="20220627 12:13:10.194"/>
-</kw>
-<kw name="To Camel" library="functions">
-<var>${ssfilename}</var>
-<arg>${nombre}</arg>
-<msg timestamp="20220627 12:13:10.194" level="INFO">${ssfilename} = /inversionessophiaolsas</msg>
-<status status="PASS" starttime="20220627 12:13:10.194" endtime="20220627 12:13:10.194"/>
-</kw>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<arg>./screenshots/${ssfilename}.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20220627 12:13:10.337" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/inversionessophiaolsas.png"&gt;&lt;img src="screenshots/inversionessophiaolsas.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220627 12:13:10.194" endtime="20220627 12:13:10.337"/>
-</kw>
-<kw name="Go Back" library="SeleniumLibrary">
-<doc>Simulates the user clicking the back button on their browser.</doc>
-<status status="PASS" starttime="20220627 12:13:10.338" endtime="20220627 12:13:10.626"/>
-</kw>
-<status status="PASS" starttime="20220627 12:13:07.524" endtime="20220627 12:13:10.627"/>
-</iter>
-<iter>
-<var name="${counter}">19</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${resultsText}</var>
-<arg>xpath://*[@id="a_nacional"]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:13:10.647" level="INFO">${resultsText} = Empresas y Empresarios (59)</msg>
-<status status="PASS" starttime="20220627 12:13:10.627" endtime="20220627 12:13:10.648"/>
-</kw>
-<kw name="Get Number Results" library="functions">
-<var>${numberResults}</var>
-<arg>${resultsText}</arg>
-<msg timestamp="20220627 12:13:10.648" level="INFO">${numberResults} = 59</msg>
-<status status="PASS" starttime="20220627 12:13:10.648" endtime="20220627 12:13:10.648"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Denominación</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20220627 12:13:10.648" endtime="20220627 12:13:10.655"/>
-</kw>
-<kw name="Get Page" library="functions">
-<var>${page}</var>
-<arg>${counter}</arg>
-<msg timestamp="20220627 12:13:10.655" level="INFO">${page} = 3</msg>
-<status status="PASS" starttime="20220627 12:13:10.655" endtime="20220627 12:13:10.655"/>
-</kw>
-<kw name="Get Index Company" library="functions">
-<var>${indexCompany}</var>
-<arg>${counter}</arg>
-<msg timestamp="20220627 12:13:10.655" level="INFO">${indexCompany} = 7</msg>
-<status status="PASS" starttime="20220627 12:13:10.655" endtime="20220627 12:13:10.655"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[${page}]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:13:10.656" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[3]'.</msg>
-<status status="PASS" starttime="20220627 12:13:10.656" endtime="20220627 12:13:10.687"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 12:13:12.693" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20220627 12:13:10.688" endtime="20220627 12:13:12.693"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="nacional"]/tbody/tr[${indexCompany}]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:13:12.694" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/tbody/tr[7]'.</msg>
-<status status="PASS" starttime="20220627 12:13:12.693" endtime="20220627 12:13:13.212"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${nombre}</var>
-<arg>xpath=//*[@id="titInner"]/div[1]/ul/li[5]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:13:13.235" level="INFO">${nombre} = / OL LEGUIZAMO LUCY MIRLANY</msg>
-<status status="PASS" starttime="20220627 12:13:13.212" endtime="20220627 12:13:13.235"/>
-</kw>
-<kw name="Get Element Attribute" library="SeleniumLibrary">
-<var>${html_table}</var>
-<arg>//*[@id="imprimir"]/table</arg>
-<arg>outerHTML</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<msg timestamp="20220627 12:13:13.250" level="INFO">${html_table} = &lt;table align="center" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="tit_ficha" colspan="2"&gt;&lt;div class="seccion"&gt;Información Básica&lt;span&gt;&lt;img src="/templates/web/_img/_gfx/carpeta.gif"&gt;&lt;/span&gt;&lt;...</msg>
-<status status="PASS" starttime="20220627 12:13:13.235" endtime="20220627 12:13:13.250"/>
-</kw>
-<kw name="Process Table" library="functions">
-<arg>${html_table}</arg>
-<arg>${nombre}</arg>
-<status status="PASS" starttime="20220627 12:13:13.250" endtime="20220627 12:13:13.255"/>
-</kw>
-<kw name="To Camel" library="functions">
-<var>${ssfilename}</var>
-<arg>${nombre}</arg>
-<msg timestamp="20220627 12:13:13.256" level="INFO">${ssfilename} = /olleguizamolucymirlany</msg>
-<status status="PASS" starttime="20220627 12:13:13.255" endtime="20220627 12:13:13.256"/>
-</kw>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<arg>./screenshots/${ssfilename}.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20220627 12:13:13.395" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/olleguizamolucymirlany.png"&gt;&lt;img src="screenshots/olleguizamolucymirlany.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220627 12:13:13.256" endtime="20220627 12:13:13.395"/>
-</kw>
-<kw name="Go Back" library="SeleniumLibrary">
-<doc>Simulates the user clicking the back button on their browser.</doc>
-<status status="PASS" starttime="20220627 12:13:13.395" endtime="20220627 12:13:13.674"/>
-</kw>
-<status status="PASS" starttime="20220627 12:13:10.627" endtime="20220627 12:13:13.674"/>
-</iter>
-<iter>
-<var name="${counter}">20</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${resultsText}</var>
-<arg>xpath://*[@id="a_nacional"]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:13:13.694" level="INFO">${resultsText} = Empresas y Empresarios (59)</msg>
-<status status="PASS" starttime="20220627 12:13:13.674" endtime="20220627 12:13:13.694"/>
-</kw>
-<kw name="Get Number Results" library="functions">
-<var>${numberResults}</var>
-<arg>${resultsText}</arg>
-<msg timestamp="20220627 12:13:13.694" level="INFO">${numberResults} = 59</msg>
-<status status="PASS" starttime="20220627 12:13:13.694" endtime="20220627 12:13:13.694"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Denominación</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20220627 12:13:13.694" endtime="20220627 12:13:13.702"/>
-</kw>
-<kw name="Get Page" library="functions">
-<var>${page}</var>
-<arg>${counter}</arg>
-<msg timestamp="20220627 12:13:13.702" level="INFO">${page} = 3</msg>
-<status status="PASS" starttime="20220627 12:13:13.702" endtime="20220627 12:13:13.702"/>
-</kw>
-<kw name="Get Index Company" library="functions">
-<var>${indexCompany}</var>
-<arg>${counter}</arg>
-<msg timestamp="20220627 12:13:13.703" level="INFO">${indexCompany} = 8</msg>
-<status status="PASS" starttime="20220627 12:13:13.703" endtime="20220627 12:13:13.703"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[${page}]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:13:13.703" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[3]'.</msg>
-<status status="PASS" starttime="20220627 12:13:13.703" endtime="20220627 12:13:13.734"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 12:13:15.743" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20220627 12:13:13.734" endtime="20220627 12:13:15.743"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[@id="nacional"]/tbody/tr[${indexCompany}]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:13:15.744" level="INFO">Clicking element 'xpath=//*[@id="nacional"]/tbody/tr[8]'.</msg>
-<status status="PASS" starttime="20220627 12:13:15.743" endtime="20220627 12:13:16.759"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${nombre}</var>
-<arg>xpath=//*[@id="titInner"]/div[1]/ul/li[5]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 12:13:16.891" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20220627 12:13:16.892" level="FAIL">Element with locator 'xpath=//*[@id="titInner"]/div[1]/ul/li[5]' not found.</msg>
-<status status="FAIL" starttime="20220627 12:13:16.760" endtime="20220627 12:13:16.893"/>
-</kw>
-<kw name="Get Element Attribute" library="SeleniumLibrary">
-<var>${html_table}</var>
-<arg>//*[@id="imprimir"]/table</arg>
-<arg>outerHTML</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<status status="NOT RUN" starttime="20220627 12:13:16.894" endtime="20220627 12:13:16.894"/>
-</kw>
-<kw name="Process Table" library="functions">
-<arg>${html_table}</arg>
-<arg>${nombre}</arg>
-<status status="NOT RUN" starttime="20220627 12:13:16.894" endtime="20220627 12:13:16.894"/>
-</kw>
-<kw name="To Camel" library="functions">
-<var>${ssfilename}</var>
-<arg>${nombre}</arg>
-<status status="NOT RUN" starttime="20220627 12:13:16.894" endtime="20220627 12:13:16.894"/>
-</kw>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<arg>./screenshots/${ssfilename}.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="NOT RUN" starttime="20220627 12:13:16.894" endtime="20220627 12:13:16.894"/>
-</kw>
-<kw name="Go Back" library="SeleniumLibrary">
-<doc>Simulates the user clicking the back button on their browser.</doc>
-<status status="NOT RUN" starttime="20220627 12:13:16.894" endtime="20220627 12:13:16.894"/>
-</kw>
-<status status="FAIL" starttime="20220627 12:13:13.674" endtime="20220627 12:13:16.894"/>
-</iter>
-<status status="FAIL" starttime="20220627 12:12:14.673" endtime="20220627 12:13:16.894"/>
+<status status="NOT RUN" starttime="20220627 14:03:02.016" endtime="20220627 14:03:02.017"/>
 </for>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="NOT RUN" starttime="20220627 12:13:16.895" endtime="20220627 12:13:16.895"/>
+<status status="NOT RUN" starttime="20220627 14:03:02.017" endtime="20220627 14:03:02.017"/>
 </kw>
 <doc>hello world</doc>
-<status status="FAIL" starttime="20220627 12:12:08.218" endtime="20220627 12:13:16.896">Element with locator 'xpath=//*[@id="titInner"]/div[1]/ul/li[5]' not found.</status>
+<status status="FAIL" starttime="20220627 14:02:55.775" endtime="20220627 14:03:02.018">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=103.0.5060.53)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00526463+2188387]
+	Ordinal0 [0x004BE461+1762401]
+	Ordinal0 [0x003D3D78+802168]
+	Ordinal0 [0x003BC680+706176]
+	Ordinal0 [0x0041F169+1110377]
+	Ordinal0 [0x0042C3C2+1164226]
+	Ordinal0 [0x0041C5F6+1099254]
+	Ordinal0 [0x003F6BE0+945120]
+	Ordinal0 [0x003F7AD6+948950]
+	GetHandleVerifier [0x007C71F2+2712546]
+	GetHandleVerifier [0x007B886D+2652765]
+	GetHandleVerifier [0x005B002A+520730]
+	GetHandleVerifier [0x005AEE06+516086]
+	Ordinal0 [0x004C468B+1787531]
+	Ordinal0 [0x004C8E88+1805960]
+	Ordinal0 [0x004C8F75+1806197]
+	Ordinal0 [0x004D1DF1+1842673]
+	BaseThreadInitThunk [0x76C86739+25]
+	RtlGetFullPathName_UEx [0x77738FEF+1215]
+	RtlGetFullPathName_UEx [0x77738FBD+1165]
+</status>
 </test>
 <doc>holamundo</doc>
-<status status="FAIL" starttime="20220627 12:12:07.960" endtime="20220627 12:13:16.898"/>
+<status status="FAIL" starttime="20220627 14:02:55.511" endtime="20220627 14:03:02.020"/>
 </suite>
 <statistics>
 <total>
@@ -1844,5 +233,31 @@ The code that caused this warning is on line 65 of the file C:\Users\jeiso\Docum
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20220627 14:03:02.009" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=103.0.5060.53)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00526463+2188387]
+	Ordinal0 [0x004BE461+1762401]
+	Ordinal0 [0x003D3D78+802168]
+	Ordinal0 [0x003BC680+706176]
+	Ordinal0 [0x0041F169+1110377]
+	Ordinal0 [0x0042C3C2+1164226]
+	Ordinal0 [0x0041C5F6+1099254]
+	Ordinal0 [0x003F6BE0+945120]
+	Ordinal0 [0x003F7AD6+948950]
+	GetHandleVerifier [0x007C71F2+2712546]
+	GetHandleVerifier [0x007B886D+2652765]
+	GetHandleVerifier [0x005B002A+520730]
+	GetHandleVerifier [0x005AEE06+516086]
+	Ordinal0 [0x004C468B+1787531]
+	Ordinal0 [0x004C8E88+1805960]
+	Ordinal0 [0x004C8F75+1806197]
+	Ordinal0 [0x004D1DF1+1842673]
+	BaseThreadInitThunk [0x76C86739+25]
+	RtlGetFullPathName_UEx [0x77738FEF+1215]
+	RtlGetFullPathName_UEx [0x77738FBD+1165]
+</msg>
 </errors>
 </robot>
