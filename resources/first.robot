@@ -28,19 +28,28 @@ This is my test case
 
     #Seleccionar departamento
     ${departamentoId}=    Get Departamento Id    ${departamento}
+
+    Log To Console    ${departamentoId}
+
     Click Element  xpath=//*[@id="PROVINCIA"]/option[${departamentoId}]
 
 
-    FOR  ${Index}  IN RANGE  1  ${n}+1  1
+    FOR  ${counter}  IN RANGE  1  ${n}+1  1
 
         ${resultsText}  Get Text  xpath://*[@id="a_nacional"]
-        ${numberResults}=  Get Number Results  ${resultsText}
-        #Log To Console    Hola====${numberResults}
 
-        #if Get Number Results > 0
-        #Ciclo para recorrer cada empresa
+        #Para ver si son 0
+        ${numberResults}=  Get Number Results  ${resultsText}
+
         Wait Until Page Contains    Denominación
-        Click Element    xpath=//*[@id="nacional"]/tbody/tr[${Index}]
+
+        ${page}=    Get Page    ${counter}
+        ${indexCompany}=    Get Index Company    ${counter}
+
+        #Click Page
+        Click Element    xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[${page}]
+        Sleep    2s
+        Click Element    xpath=//*[@id="nacional"]/tbody/tr[${indexCompany}]
 
         ${nombre}    Get Text    xpath=//*[@id="titInner"]/div[1]/ul/li[5]
         ${html_table}=    Get Element Attribute    //*[@id="imprimir"]/table    outerHTML

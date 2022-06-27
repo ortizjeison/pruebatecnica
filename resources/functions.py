@@ -8,6 +8,7 @@ pageSize = 12
 maxResults = 30
 
 departamentos = {
+    'Filtrar departamento': '1',
     'AMAZONAS': '2',
     'ANTIOQUIA': '3',
     'ARAUCA': '4',
@@ -53,10 +54,10 @@ def get_departamentos():
 
 def get_departamento_id(nombre):
 
-    if(departamentos.get(nombre)!='None'):
+    if(departamentos.get(nombre)!= None):
         return departamentos.get(nombre)
     else:
-        return False
+        return str(1)
 
 def process_table(html,nombre):
 
@@ -101,14 +102,13 @@ def get_page(n):
 
     for i in range (1,maxPages+1):
         if(i-1<=value<=i):
-            return i
+            return i-1
 
 def get_index_company(n):
     return n - (pageSize*(get_page(n)-1))
 
-num = 36
-print(get_page(num))
-print(get_index_company(num))
+#num = 20
+#print("For num "+str(num)+": page:"+str(get_page(num))+" / index:"+str(get_index_company(num)))
 
 #yfile = open(r"C:\Users\jeiso\Documents\GitHub\pruebatecnica\results\table.txt", encoding='utf-8')
 #process_table(myfile,'Empresa123')
