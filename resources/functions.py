@@ -116,9 +116,6 @@ def process_table(html,nombre,companyNameSearch):
 
             key = camel_case(element[0]).replace(":","")
 
-            #result["Key"].append(to_lower(element[0]).replace(":",""))
-            #result["Value"].append(element[1])
-
             temp={key:element[1]}
             company.update(temp)
 

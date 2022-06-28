@@ -24,11 +24,10 @@ This is my test case
     Click Button  xpath=//*[@id="buscador_cabecera"]/input[2]
     Wait Until Page Contains  Resultados de búsqueda
 
-    #Seleccionar departamento
-    ${departamentoId}=    Get Departamento Id    ${departamento}
-    Click Element  xpath=//*[@id="PROVINCIA"]/option[${departamentoId}]
 
     TRY
+        ${departamentoId}=    Get Departamento Id    ${departamento}
+        Click Element  xpath=//*[@id="PROVINCIA"]/option[${departamentoId}]
         Wait Until Page Contains    Pulse sobre el nombre de la Empresa para acceder a la información de la misma
     EXCEPT
         Write No Results
