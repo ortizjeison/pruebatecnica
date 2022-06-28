@@ -35,6 +35,7 @@ def queryByName():
 
     try:
         os.remove(jsonFilePath)
+        #print("hola")
     except:
         pass
 
@@ -48,7 +49,7 @@ def queryByName():
     try:
         
         schema.load(inputData)
-        robotRun = f"robot -d ./results -v companyNameSearch:{argNombre} -v n:{argN} -v departamento:{argDepartamento} ../resources/first.robot"
+        robotRun = f"robot -d ./results -v companyNameSearch:{argNombre} -v n:{argN} -v departamento:{argDepartamento} ../resources/byName.robot"
 
         os.system(robotRun)
 

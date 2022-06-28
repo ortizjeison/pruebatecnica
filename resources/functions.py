@@ -50,6 +50,7 @@ departamentos = {
 
 def get_number_results(string):
     number = string[string.find("(")+1:string.find(")")]
+    print("NUMBER OF RESLTS: "+str(number))
     return number
 
 def get_departamentos():
@@ -140,7 +141,7 @@ def get_index_company(n):
 
 def write_no_results():
     with open(path, "w", encoding='utf-8') as jsonfile:
-        json.dump({"data":"0 Results"}, jsonfile, ensure_ascii=False)
+        json.dump({"data":"No ha sido posible encontrar ningún resultado relacionado con su búsqueda. Por favor, revise los términos de búsqueda e inténtelo de nuevo."}, jsonfile, ensure_ascii=False)
 
 #num = 20
 #print("For num "+str(num)+": page:"+str(get_page(num))+" / index:"+str(get_index_company(num)))
