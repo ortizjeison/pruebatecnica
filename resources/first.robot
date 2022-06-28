@@ -7,7 +7,7 @@ Library  functions.py
 
 *** Variables ***
 
-${BROWSER}  Chrome
+${BROWSER}  Edge
 ${URL}  https://www.einforma.co/buscador-empresas-empresarios
 ${companyNameSearch}
 ${departamento}
@@ -51,7 +51,7 @@ This is my test case
             ${nombre}    Get Text    xpath=//*[@id="titInner"]/div[1]/ul/li[5]
             ${html_table}=    Get Element Attribute    //*[@id="imprimir"]/table    outerHTML
             Process Table    ${html_table}    ${nombre}
-            ${ssfilename}    To Camel    ${nombre}
+            ${ssfilename}    To Lower    ${nombre}
             Capture Page Screenshot    ./screenshots/${ssfilename}.png
 
             Go Back

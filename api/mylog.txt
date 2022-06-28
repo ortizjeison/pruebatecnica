@@ -1,0 +1,37 @@
+==============================================================================
+First :: holamundo                                                            
+==============================================================================
+This is my test case :: hello world                                   | FAIL |
+WebDriverException: Message: chrome not reachable
+  (Session info: MicrosoftEdge=103.0.1264.37)
+Stacktrace:
+Backtrace:
+	Microsoft::Applications::Events::EventProperties::unpack [0x00007FF638996292+24642]
+	Microsoft::Applications::Events::GUID_t::GUID_t [0x00007FF6388E99E2+334098]
+	Ordinal0 [0x00007FF6384877CB+620491]
+	Ordinal0 [0x00007FF6384780C6+557254]
+	Ordinal0 [0x00007FF638478A59+559705]
+	Ordinal0 [0x00007FF63847A8FD+567549]
+	Ordinal0 [0x00007FF63847308F+536719]
+	Ordinal0 [0x00007FF638488C71+625777]
+	Ordinal0 [0x00007FF6384F2606+1058310]
+	Ordinal0 [0x00007FF6384DECB3+978099]
+	Ordinal0 [0x00007FF6384B5F00+810752]
+	Ordinal0 [0x00007FF6384B7508+816392]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF63874D478+135480]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF638734B77+34871]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF638737BFC+47292]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF6385911B6+23222]
+	Microsoft::Applications::Events::GUID_t::GUID_t [0x00007FF6388F0EEB+364059]
+	Microsoft::Applications::Events::GUID_t::GUID_t [0x00007FF6388F5924+383060]
+	Microsoft::Applications::Events::GUID_t::GUID_t [0x00007FF6388F5A7D+383405]
+	Microsoft::Applications::Events::time_ticks_t::time_ticks_t [0x00007FF63890038E+39918]
+	BaseThreadInitThunk [0x00007FFF748654E0+16]
+	RtlUserThreadStart [0x00007FFF769C485B+43]
+------------------------------------------------------------------------------
+First :: holamundo                                                    | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Output:  C:\Users\jeiso\Documents\GitHub\pruebatecnica\api\output.xml
+Log:     C:\Users\jeiso\Documents\GitHub\pruebatecnica\api\log.html
+Report:  C:\Users\jeiso\Documents\GitHub\pruebatecnica\api\report.html

@@ -62,7 +62,7 @@ def get_departamento_id(nombre):
 
 def process_table(html,nombre):
 
-    path = r'.\results\json\test.json'
+    path = r'..\results\json\test.json'
 
     database = db.getDb(path)
 
@@ -97,12 +97,12 @@ def process_table(html,nombre):
     )
 
     company.update(
-        {"screenshotURL":r'results\screenshots\{}.png'.format(to_camel(nombre.replace("/ ","")))}
+        {"screenshotURL":r'results\screenshots\{}.png'.format(to_lower(nombre.replace("/ ","")))}
     )
 
     for element in table_data:
         if(len(element)>1):
-            result["Key"].append(element[0].replace(":",""))
+            result["Key"].append(camel_case(element[0]).replace(":",""))
             result["Value"].append(element[1])
             temp={element[0].replace(":",""):element[1]}
             company.update(temp)
@@ -112,10 +112,13 @@ def process_table(html,nombre):
 
 
 
-def to_camel(s):
+def to_lower(s):
     s = sub(r"(_|-)+", " ", s).title().replace(" ", "")
     return s[:].lower()
 
+def camel_case(s):
+  s = sub(r"(_|-)+", " ", s).title().replace(" ", "")
+  return ''.join([s[0].lower(), s[1:]])
 
 def get_page(n):
     value = n/pageSize
@@ -134,3 +137,5 @@ def get_index_company(n):
 
 #myfile = open(r"C:\Users\jeiso\Documents\GitHub\pruebatecnica\results\table.txt", encoding='utf-8')
 #process_table(myfile,'Empresa5213')
+
+print(camel_case("Fecha Último Dato"))
