@@ -24,22 +24,17 @@ This is my test case
     Click Button  xpath=//*[@id="buscador_cabecera"]/input[2]
     Wait Until Page Contains  Resultados de búsqueda
 
-    ${resultsText}    Get Text    xpath=//*[@id="a_nacional"]
+    #Seleccionar departamento
+    ${departamentoId}=    Get Departamento Id    ${departamento}
+    Click Element  xpath=//*[@id="PROVINCIA"]/option[${departamentoId}]
 
-    ${numberResults}=    Get Number Results  ${resultsText}
-    IF    ${numberResults} == 0
+    TRY
+        Wait Until Page Contains    Pulse sobre el nombre de la Empresa para acceder a la información de la misma
+    EXCEPT
         Write No Results
-        Close Browser
-
     ELSE
-        #Seleccionar departamento
-        ${departamentoId}=    Get Departamento Id    ${departamento}
-        Click Element  xpath=//*[@id="PROVINCIA"]/option[${departamentoId}]
-
         FOR  ${counter}  IN RANGE  1  ${n}+1  1
 
-            ${resultsText}  Get Text  xpath://*[@id="a_nacional"]
-            Wait Until Page Contains    Denominación
 
             ${page}=    Get Page    ${counter}
             ${indexCompany}=    Get Index Company    ${counter}
@@ -57,8 +52,6 @@ This is my test case
 
             Go Back
         END
-
+    FINALLY
         Close Browser
-
     END
-

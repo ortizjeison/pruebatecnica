@@ -30,7 +30,7 @@ class QueryByNameSchema(Schema):
         if value > 30:
             raise ValidationError("N debe ser un entero menor o igual a 30.")
 
-@app.get('/queryByName')
+@app.get('/consultarPorNombre')
 def queryByName():
 
     try:
@@ -39,7 +39,7 @@ def queryByName():
     except:
         pass
 
-    argNombre = request.args.get("name")
+    argNombre = request.args.get("nombre")
     argDepartamento = request.args.get("departamento")
     argN = request.args.get("n")
 
