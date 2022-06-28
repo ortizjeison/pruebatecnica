@@ -30,6 +30,25 @@ class QueryByNameSchema(Schema):
         if value > 30:
             raise ValidationError("N debe ser un entero menor o igual a 30.")
 
+class QueryByNITSchema(Schema):
+
+    departamento = fields.String(required=True,validate=validate.OneOf(departamentos))
+    nit = fields.Int(required=True,validate=validate.Range(min=0000000000, max=9999999999))
+
+    n = fields.Integer(
+        required=True,
+        error_messages={"required": {"message": "n es un campo obligatorio", "code": 400}}
+    )
+
+    @validates("n")
+    def validate_quantity(self, value):
+        if value < 1:
+            raise ValidationError("N debe ser un entero mayor que 0.")
+        if value > 30:
+            raise ValidationError("N debe ser un entero menor o igual a 30.")
+
+
+
 @app.get('/consultarPorNombre')
 def queryByName():
 
@@ -50,6 +69,41 @@ def queryByName():
         
         schema.load(inputData)
         robotRun = f"robot -d ./results -v companyNameSearch:{argNombre} -v n:{argN} -v departamento:{argDepartamento} ../resources/byName.robot"
+
+        os.system(robotRun)
+
+        with open(jsonFilePath, encoding='utf-8') as jsonFile:
+            data = json.load(jsonFile)
+
+        os.remove(jsonFilePath)
+
+        return data
+
+        
+    except ValidationError as err:
+        return err.messages
+
+
+@app.get('/consultarPorNIT')
+def queryByNIT():
+
+    try:
+        os.remove(jsonFilePath)
+        #print("hola")
+    except:
+        pass
+
+    argNombre = request.args.get("NIT")
+    argDepartamento = request.args.get("departamento")
+    argN = request.args.get("n")
+
+    schema = QueryByNameSchema()
+    inputData = {"nombre": argNombre,"departamento": argDepartamento,"n": argN}
+
+    try:
+        
+        schema.load(inputData)
+        robotRun = f"robot -d ./results -v companyNameSearch:{argNombre} -v n:{argN} -v departamento:{argDepartamento} ../resources/byNIT.robot"
 
         os.system(robotRun)
 
