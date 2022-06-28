@@ -48,8 +48,7 @@ def queryByName():
     try:
         
         schema.load(inputData)
-
-        robotRun = f"robot -d ./results -v companyNameSearch:{argNombre} -v n:{argN} -v departamento:{argNombre} ../resources/first.robot"
+        robotRun = f"robot -d ./results -v companyNameSearch:{argNombre} -v n:{argN} -v departamento:{argDepartamento} ../resources/first.robot"
 
         os.system(robotRun)
 
