@@ -46,7 +46,7 @@ This is my test case
 
             ${nombre}    Get Text    xpath=//*[@id="titInner"]/div[1]/ul/li[5]
             ${html_table}=    Get Element Attribute    //*[@id="imprimir"]/table    outerHTML
-            Process Table    ${html_table}    ${nombre}
+            Process Table    ${html_table}    ${nombre}    ${companyNameSearch}
             ${ssfilename}    To Lower    ${nombre}
             Capture Page Screenshot    ./screenshots/${ssfilename}.png
 

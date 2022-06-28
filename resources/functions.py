@@ -4,6 +4,8 @@ from re import sub
 import math
 from pysondb import db
 import unidecode
+from difflib import SequenceMatcher
+
 
 pageSize = 12
 maxResults = 30
@@ -63,7 +65,7 @@ def get_departamento_id(nombre):
     else:
         return str(1)
 
-def process_table(html,nombre):
+def process_table(html,nombre,companyNameSearch):
 
 
     #path = r'..\api\results\temp.json'
@@ -76,6 +78,7 @@ def process_table(html,nombre):
     result = {"Key":[], "Value":[]}
 
     dict = '''{
+    "score":"Null",
     "ici":"Null",
     "nit":"Null",
     "razonSocial":"Null",
@@ -93,10 +96,16 @@ def process_table(html,nombre):
     }'''
 
     company = json.loads(dict)
+    nombre = nombre.replace("/ ","")
 
     company.update(
-        {"nombre": nombre.replace("/ ","")}
+        {"score": str(SequenceMatcher(None, nombre, companyNameSearch).ratio())}
     )
+
+    company.update(
+        {"nombre": nombre}
+    )
+
 
     company.update(
         {"screenshotURL":r'results\screenshots\{}.png'.format(to_lower(nombre.replace("/ ","")))}
