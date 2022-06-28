@@ -63,6 +63,7 @@ def get_departamento_id(nombre):
 def process_table(html,nombre):
 
     path = r'results\temp.json'
+    #path = r'..\api\results\temp.json'
 
     database = db.getDb(path)
 
@@ -72,23 +73,21 @@ def process_table(html,nombre):
     result = {"Key":[], "Value":[]}
 
     dict = '''{
-        "Nombre":"Null",
-        "Screenshoturl":"Null",
-        "Ici":"Null",
-        "Nit":"Null",
-        "RazonSocial":"Null",
-        "FormaJuridica":"Null",
-        "Departamento":"Null",
-        "DireccionActual":"Null",
-        "Telefono":"Null",
-        "Email":"Null",
-        "ActividadCiiu":"Null",
-        "FechaConstitucion":"Null",
-        "MatriculaMercantil":"Null",
-        "UltimoBalanceDisponibleEnEinforma":"Null",
-        "FechaUltimoDato":"Null",
-        "FechaActualizacionCamaraComercio":"Null"
-        }'''
+    "ici":"Null",
+    "nit":"Null",
+    "razonSocial":"Null",
+    "formaJuridica":"Null",
+    "departamento":"Null",
+    "direccionActual":"Null",
+    "telefono":"Null",
+    "email":"Null",
+    "actividadCiiu":"Null",
+    "fechaConstitucion":"Null",
+    "matriculaMercantil":"Null",
+    "fechaUltimoDato":"Null",
+    "fechaActualizacionCamaraComercio":"Null",
+    "ultimoBalanceDisponibleEnEinforma":"Null"
+    }'''
 
     company = json.loads(dict)
 
@@ -102,9 +101,13 @@ def process_table(html,nombre):
 
     for element in table_data:
         if(len(element)>1):
-            result["Key"].append(camel_case(element[0]).replace(":",""))
-            result["Value"].append(element[1])
-            temp={element[0].replace(":",""):element[1]}
+
+            key = camel_case(element[0]).replace(":","")
+
+            #result["Key"].append(to_lower(element[0]).replace(":",""))
+            #result["Value"].append(element[1])
+
+            temp={key:element[1]}
             company.update(temp)
 
 
@@ -136,26 +139,5 @@ def get_index_company(n):
 #num = 20
 #print("For num "+str(num)+": page:"+str(get_page(num))+" / index:"+str(get_index_company(num)))
 
-#myfile = open(r"C:\Users\jeiso\Documents\GitHub\pruebatecnica\results\table.txt", encoding='utf-8')
-#process_table(myfile,'Empresa5213')
-
-
-tempstring ='''{
-        "nombre": "Null",
-        "screenshotURL": "Null",
-        "ICI": "Null",
-        "Nit": "Null",
-        "Razón Social": "Null",
-        "Forma Jurídica": "Null",
-        "Departamento": "Null",
-        "Dirección Actual": "Null",
-        "Teléfono": "Null",
-        "Email": "Null",
-        "Actividad CIIU": "Null",
-        "Fecha Constitución": "Null",
-        "Matrícula Mercantil": "Null",
-        "Último Balance disponible en eInforma": "Null",
-        "Fecha Último Dato": "Null",
-        "Fecha Actualización Cámara Comercio": "Null"
-}'''
-print(camel_case(tempstring))
+myfile = open(r"C:\Users\jeiso\Documents\GitHub\pruebatecnica\results\table.txt", encoding='utf-8')
+process_table(myfile,'Empresa5213')

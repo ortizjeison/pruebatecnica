@@ -3,32 +3,63 @@ from apiflask.fields import Integer, String
 from apiflask.validators import Length, OneOf
 from flask import request
 from marshmallow import Schema, fields, post_load, validates, validate, ValidationError
-
-import robot
 import os
 import json
 
 departamentos = ['AMAZONAS','ANTIOQUIA','ARAUCA','ATLÁNTICO','BOGOTÁ','BOLÍVAR','BOYACÁ','CALDAS','CAQUETÁ','CASANARE','CAUCA','CESAR','CHOCÓ','CÓRDOBA','CUNDINAMARCA','GUAINÍA','GUAVIARE','HUILA','LA GUAJIRA','MAGDALENA','META','NARIÑO','NORTE SANTANDER','PUTUMAYO','QUINDÍO','RISARALDA','SAN ANDRÉS','SANTANDER','SUCRE','TOLIMA','VALLE','VAUPÉS','VICHADA','No Aplica']
 
+jsonFilePath = 'results/temp.json'
+
 app = APIFlask(__name__)
 
-class QuerySchema(Schema):
-    nombre = String()
-    nit = Integer()
-    n = Integer(required=True)
-    departamento = String(required=True, validate=OneOf(departamentos))
+class QueryByNameSchema(Schema):
+    nombre = fields.String(required=True)
+    departamento = fields.String(required=True)
 
-#/<string:nombre>/<string:departamento>/<int:n>
+    #nit = fields.Int(validate=validate.Range(min=0000000000, max=9999999999))
+
+    n = fields.Integer(
+        required=True,
+        error_messages={"required": {"message": "n es un campo obligatorio", "code": 400}}
+    )
+
+    @validates("n")
+    def validate_quantity(self, value):
+        if value < 1:
+            raise ValidationError("N debe ser un entero mayor que 0.")
+        if value > 30:
+            raise ValidationError("N debe ser un entero menor o igual a 30.")
 
 @app.get('/queryByName')
+def queryByName():
 
-def query():
-    argName = request.args.get("name")
+    try:
+        os.remove(jsonFilePath)
+    except:
+        pass
 
-    #os.system("robot -d ./results -v companyNameSearch:ol -v n:2 -v departamento:BOGOTÁ ../resources/first.robot")
-    print(nameArg)
+    argNombre = request.args.get("name")
+    argDepartamento = request.args.get("departamento")
+    argN = request.args.get("n")
 
-    with open('results/temp.json', encoding='utf-8') as jsonFile:
-        data = json.load(jsonFile)
+    schema = QueryByNameSchema()
+    inputData = {"nombre": argNombre,"departamento": argDepartamento,"n": argN}
 
-    return data
+    try:
+        
+        schema.load(inputData)
+
+        robotRun = f"robot -d ./results -v companyNameSearch:{argNombre} -v n:{argN} -v departamento:{argNombre} ../resources/first.robot"
+
+        os.system(robotRun)
+
+        with open(jsonFilePath, encoding='utf-8') as jsonFile:
+            data = json.load(jsonFile)
+
+        os.remove(jsonFilePath)
+
+        return data
+
+        
+    except ValidationError as err:
+        return err.messages
