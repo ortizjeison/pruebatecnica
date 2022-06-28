@@ -28,6 +28,7 @@ This is my test case
 
     ${numberResults}=    Get Number Results  ${resultsText}
     IF    ${numberResults} == 0
+        Write No Results
         Close Browser
 
     ELSE

@@ -7,6 +7,8 @@ import unidecode
 
 pageSize = 12
 maxResults = 30
+path = r'results\temp.json'
+
 
 departamentos = {
     'Filtrar departamento': '1',
@@ -62,7 +64,7 @@ def get_departamento_id(nombre):
 
 def process_table(html,nombre):
 
-    path = r'results\temp.json'
+
     #path = r'..\api\results\temp.json'
 
     database = db.getDb(path)
@@ -136,8 +138,12 @@ def get_page(n):
 def get_index_company(n):
     return n - (pageSize*(get_page(n)-2))
 
+def write_no_results():
+    with open(path, "w", encoding='utf-8') as jsonfile:
+        json.dump({"data":"0 Results"}, jsonfile, ensure_ascii=False)
+
 #num = 20
 #print("For num "+str(num)+": page:"+str(get_page(num))+" / index:"+str(get_index_company(num)))
 
-myfile = open(r"C:\Users\jeiso\Documents\GitHub\pruebatecnica\results\table.txt", encoding='utf-8')
-process_table(myfile,'Empresa5213')
+#myfile = open(r"C:\Users\jeiso\Documents\GitHub\pruebatecnica\results\table.txt", encoding='utf-8')
+#process_table(myfile,'Empresa5213')

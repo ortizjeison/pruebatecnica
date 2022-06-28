@@ -14,7 +14,7 @@ app = APIFlask(__name__)
 
 class QueryByNameSchema(Schema):
     nombre = fields.String(required=True)
-    departamento = fields.String(required=True)
+    departamento = fields.String(required=True,validate=validate.OneOf(departamentos))
 
     #nit = fields.Int(validate=validate.Range(min=0000000000, max=9999999999))
 
