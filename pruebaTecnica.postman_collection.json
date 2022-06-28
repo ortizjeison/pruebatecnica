@@ -1,0 +1,107 @@
+{
+	"info": {
+		"_postman_id": "adc2897d-5d61-466d-aebb-41b6078805cd",
+		"name": "pruebaTecnica",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET consultarPorNombre",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/consultarPorNombre?nombre=Olimpica&departamento=BOGOTÁ&n=3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"consultarPorNombre"
+					],
+					"query": [
+						{
+							"key": "nombre",
+							"value": "Olimpica"
+						},
+						{
+							"key": "departamento",
+							"value": "BOGOTÁ"
+						},
+						{
+							"key": "n",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET consultarPorNIT",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/consultarPorNIT?NIT=8909006089",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"consultarPorNIT"
+					],
+					"query": [
+						{
+							"key": "NIT",
+							"value": "8909006089"
+						},
+						{
+							"key": "departamento",
+							"value": "BOGOTÁ",
+							"disabled": true
+						},
+						{
+							"key": "n",
+							"value": "3",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
