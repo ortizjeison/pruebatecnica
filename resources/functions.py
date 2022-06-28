@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 from re import sub
 import math
 from pysondb import db
-
+import unidecode
 
 pageSize = 12
 maxResults = 30
@@ -62,7 +62,7 @@ def get_departamento_id(nombre):
 
 def process_table(html,nombre):
 
-    path = r'..\results\json\test.json'
+    path = r'results\temp.json'
 
     database = db.getDb(path)
 
@@ -72,23 +72,23 @@ def process_table(html,nombre):
     result = {"Key":[], "Value":[]}
 
     dict = '''{
-        "nombre": "Null",
-        "screenshotURL": "Null",
-        "ICI": "Null",
-        "Nit": "Null",
-        "Razón Social": "Null",
-        "Forma Jurídica": "Null",
-        "Departamento": "Null",
-        "Dirección Actual": "Null",
-        "Teléfono": "Null",
-        "Email": "Null",
-        "Actividad CIIU": "Null",
-        "Fecha Constitución": "Null",
-        "Matrícula Mercantil": "Null",
-        "Último Balance disponible en eInforma": "Null",
-        "Fecha Último Dato": "Null",
-        "Fecha Actualización Cámara Comercio": "Null"
-}'''
+        "Nombre":"Null",
+        "Screenshoturl":"Null",
+        "Ici":"Null",
+        "Nit":"Null",
+        "RazonSocial":"Null",
+        "FormaJuridica":"Null",
+        "Departamento":"Null",
+        "DireccionActual":"Null",
+        "Telefono":"Null",
+        "Email":"Null",
+        "ActividadCiiu":"Null",
+        "FechaConstitucion":"Null",
+        "MatriculaMercantil":"Null",
+        "UltimoBalanceDisponibleEnEinforma":"Null",
+        "FechaUltimoDato":"Null",
+        "FechaActualizacionCamaraComercio":"Null"
+        }'''
 
     company = json.loads(dict)
 
@@ -114,11 +114,12 @@ def process_table(html,nombre):
 
 def to_lower(s):
     s = sub(r"(_|-)+", " ", s).title().replace(" ", "")
-    return s[:].lower()
+    return unidecode.unidecode(s[:].lower())
 
 def camel_case(s):
   s = sub(r"(_|-)+", " ", s).title().replace(" ", "")
-  return ''.join([s[0].lower(), s[1:]])
+  temp = ''.join([s[0].lower(), s[1:]])
+  return unidecode.unidecode(temp)
 
 def get_page(n):
     value = n/pageSize
@@ -138,4 +139,23 @@ def get_index_company(n):
 #myfile = open(r"C:\Users\jeiso\Documents\GitHub\pruebatecnica\results\table.txt", encoding='utf-8')
 #process_table(myfile,'Empresa5213')
 
-print(camel_case("Fecha Último Dato"))
+
+tempstring ='''{
+        "nombre": "Null",
+        "screenshotURL": "Null",
+        "ICI": "Null",
+        "Nit": "Null",
+        "Razón Social": "Null",
+        "Forma Jurídica": "Null",
+        "Departamento": "Null",
+        "Dirección Actual": "Null",
+        "Teléfono": "Null",
+        "Email": "Null",
+        "Actividad CIIU": "Null",
+        "Fecha Constitución": "Null",
+        "Matrícula Mercantil": "Null",
+        "Último Balance disponible en eInforma": "Null",
+        "Fecha Último Dato": "Null",
+        "Fecha Actualización Cámara Comercio": "Null"
+}'''
+print(camel_case(tempstring))

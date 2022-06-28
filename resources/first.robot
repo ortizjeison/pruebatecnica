@@ -45,7 +45,7 @@ This is my test case
 
             #Click Page
             Click Element    xpath=//*[@id="nacional"]/div[3]/div/div[2]/ul/li[${page}]
-            Sleep    5s
+            Sleep    2s
             Click Element    xpath=//*[@id="nacional"]/tbody/tr[${indexCompany}]
 
             ${nombre}    Get Text    xpath=//*[@id="titInner"]/div[1]/ul/li[5]

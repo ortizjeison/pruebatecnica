@@ -1,5 +1,7 @@
 from marshmallow import Schema, fields, post_load, validates, validate, ValidationError
 
+
+
 class Query:
     def __init__(self,nombre,departamento,nit,n):
         self.nombre = nombre
